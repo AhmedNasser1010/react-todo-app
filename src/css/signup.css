@@ -1,0 +1,62 @@
+.signup {
+	background-color: #4caf50;
+}
+
+.signup h1.title {
+	padding: 70px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.signup form {
+	padding: 0 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.signup form label {}
+
+.signup form label input {
+	all: unset;
+	display: block;
+	width: calc(100% - 20px);
+	border: 2px solid;
+	padding: 10px;
+	margin: 5px 0 20px;
+	cursor: text;
+}
+
+.signup form label.ageSex div {
+	display: flex;
+}
+
+.signup form label.ageSex div .age,
+.signup form label.ageSex div .sex {
+	width: calc(100% / 3);
+}
+
+.signup form label.ageSex div .sex {
+	border: 2px solid;
+	border-left-color: transparent;
+	margin: 5px 0 20px;
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.signup form label input.checkbox {
+	all: revert;
+	margin-bottom: 20px;
+}
+
+.signup form input.submit {
+	all: unset;
+	text-align: center;
+	border-radius: 5px;
+	font-weight: bold;
+	color: white;
+	padding: 10px;
+	background-color: crimson;
+	cursor: pointer;
+}
