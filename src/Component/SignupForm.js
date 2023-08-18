@@ -1,13 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import Awesome from "./Awesome.js";
 import { addUser } from "../rtk/slices/usersSlice.js";
+import { useNavigate } from 'react-router-dom';
 
 const SignupForm = (props) => {
   const users = useSelector((state) => state.users);
+  const navigate = useNavigate();
   
   const dispatch = useDispatch();
-  const [localUser, setLocalUser] = useState({fName: "", lName: "", email: "", password: "", url: "", age: 0, sex: "", rememberMe: false});
+  const [localUser, setLocalUser] = useState({fName: "", lName: "", email: "", password: "", url: "", age: "", sex: "", tasks: []});
 
   function handleChange(e) {
     let value;
@@ -39,8 +41,18 @@ const SignupForm = (props) => {
       }
     })
 
+    if(localStorage.users) {
+      const localUsers = JSON.parse(localStorage.users);
+      localUsers.map((user) => {
+        if(user.email === localUser.email) {
+          isValid = false;
+        };
+      });
+    };
+
     if(isValid) {
       dispatch(addUser(localUser));
+      navigate("/login");
     }
   }
 
@@ -48,36 +60,36 @@ const SignupForm = (props) => {
     <form onSubmit={handleSubmit}>
     	<label htmlFor="fName">
     		First Name
-    		<input className="fName" id="fName" type="text" name="fName" onChange={handleChange} />
+    		<input className="fName" id="fName" value={localUser.fName} type="text" name="fName" onChange={handleChange} />
     	</label>
     	<label htmlFor="lName">
     		Last Name
-    		<input className="lName" id="lName" type="text" name="lName" onChange={handleChange} />
+    		<input className="lName" id="lName" value={localUser.lName} type="text" name="lName" onChange={handleChange} />
     	</label>
     	<label htmlFor="email">
     		Email
-    		<input className="email" id="email" type="email" name="email" onChange={handleChange} />
+    		<input className="email" id="email" value={localUser.email} type="email" name="email" onChange={handleChange} />
     	</label>
     	<label htmlFor="password">
     		Password
-    		<input className="password" id="password" type="password" name="password" onChange={handleChange} />
+    		<input className="password" id="password" value={localUser.password} type="password" name="password" onChange={handleChange} />
     	</label>
     	<label htmlFor="url">
     		Avatar URL
-    		<input className="avatar-url" id="url" type="text" name="url" onChange={handleChange} />
+    		<input className="avatar-url" id="url" value={localUser.url} type="text" name="url" onChange={handleChange} />
     	</label>
     	<label className="ageSex">
     		Age & Sex
     		<div>
-    			<input className="age" name="age" type="text" onChange={handleChange} />
+    			<input className="age" name="age" value={localUser.age} type="text" onChange={handleChange} />
     			<span className="sex male" data-value="male" onClick={handleSex}>Male</span>
     			<span className="sex female" data-value="female" onClick={handleSex}>Female</span>
     		</div>
     	</label>
-    	<label htmlFor="remember">
+    	{/*<label htmlFor="remember">
     		<input name="rememberMe" className="checkbox" onChange={handleChange} type="checkbox" />
     		<span>Remember me</span>
-    	</label>
+    	</label>*/}
     	<input className="submit" type="submit" value="Signup" />
     	<div className="or">
     		<span className="title">Or Signup With</span>

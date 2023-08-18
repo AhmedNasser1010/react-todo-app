@@ -1,17 +1,19 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { increment } from "../rtk/slices/tasksSlice.js";
+import { useNavigate } from 'react-router-dom';
 
 const Home = (props) => {
   const dispatch = useDispatch();
-  const count = useSelector((state) => state.tasks);
+  const users = useSelector((state) => state.users);
+  const navigate = useNavigate();
 
-  return (
-    <>
-      <div>Home - {count}</div>
-      <button onClick={() => dispatch(increment(1))}>incre</button>
-    </>
-  )
+  useEffect(() => {
+    if (!(localStorage.currentUser || sessionStorage.currentUser)) {
+      navigate("/login");
+    }
+  }, [])
+
+  return (<h1>Home</h1>)
 }
 
 export default Home;
