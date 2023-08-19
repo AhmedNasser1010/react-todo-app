@@ -2,14 +2,14 @@ import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 // import Awesome from "./Awesome.js";
 import { addUser } from "../rtk/slices/usersSlice.js";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const SignupForm = (props) => {
   const users = useSelector((state) => state.users);
   const navigate = useNavigate();
   
   const dispatch = useDispatch();
-  const [localUser, setLocalUser] = useState({fName: "", lName: "", email: "", password: "", url: "", age: "", sex: "", tasks: []});
+  const [localUser, setLocalUser] = useState({fName: "", lName: "", email: "", password: "", url: "", age: "", sex: "", data: {categories: ["school", "work", "life", "home", "plan"], tasks: {}}});
 
   function handleChange(e) {
     let value;
@@ -86,11 +86,8 @@ const SignupForm = (props) => {
     			<span className="sex female" data-value="female" onClick={handleSex}>Female</span>
     		</div>
     	</label>
-    	{/*<label htmlFor="remember">
-    		<input name="rememberMe" className="checkbox" onChange={handleChange} type="checkbox" />
-    		<span>Remember me</span>
-    	</label>*/}
     	<input className="submit" type="submit" value="Signup" />
+      <span className="or-signup">You already have account <Link to="/login">Login</Link></span>
     	<div className="or">
     		<span className="title">Or Signup With</span>
     		<a href="#" className="google">G</a>

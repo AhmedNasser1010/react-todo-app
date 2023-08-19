@@ -1,11 +1,17 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Login = (props) => {
   const [values, setValues] = useState({email: "", password: "", rememberMe: false});
   const users = useSelector((state) => state.users);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.currentUser || sessionStorage.currentUser) {
+      navigate("/");
+    }
+  }, [])
 
   function handleChange(e) {
     let value;
@@ -58,6 +64,7 @@ const Login = (props) => {
         <span>Remember me</span>
       </label>
       <input className="submit" type="submit" value="Signup" />
+      <span className="or-signup">You dont have account <Link to="/signup">Signup</Link></span>
       <div className="or">
         <span className="title">Or Login With</span>
         <a href="#" className="google">G</a>
