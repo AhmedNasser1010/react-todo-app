@@ -23,13 +23,21 @@ const Home = (props) => {
     }
   }, [])
 
+  function getCountOfTasks() {
+    return currentUser.data.tasks.filter((task) => {
+      if (!task.isDone) {
+        return true;
+      }
+    })
+  }
+
   return (
 
     <div className="home">
       <SettingsBtn />
       <Avatar img={currentUser.url} />
       <div>
-        <Greeting name={currentUser.fName} tasksCount={currentUser.data.tasks.length} />
+        <Greeting name={currentUser.fName} tasksCount={getCountOfTasks().length} />
         <ViewMod />
       </div>
       <div className="categories">

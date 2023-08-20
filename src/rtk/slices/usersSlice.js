@@ -24,6 +24,9 @@ export const usersSlice = createSlice({
 
       configStorage("users", action.payload);
       state.push(action.payload);
+    },
+    getUsersFromStorage: (state, action) => {
+      return localStorage.users
     }
   },
 })

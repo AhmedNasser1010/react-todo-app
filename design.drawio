@@ -1,6 +1,6 @@
-<mxfile host="Electron" modified="2023-08-19T13:35:46.169Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.5 Chrome/114.0.5735.243 Electron/25.3.1 Safari/537.36" etag="AEG2cz6huZI2nVc5-HXE" version="21.6.5" type="device">
+<mxfile host="Electron" modified="2023-08-20T05:38:59.897Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.5 Chrome/114.0.5735.243 Electron/25.3.1 Safari/537.36" etag="XHLVIOkJ_vG4LrwZmDYF" version="21.6.5" type="device">
   <diagram name="Page-1" id="nexd7V_KpACpUluOauGk">
-    <mxGraphModel dx="765" dy="471" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="772" dy="374" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -727,26 +727,26 @@
         <mxCell id="af_uOoCgeeQ2wv18IImW-5" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Remember me&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="672.5" y="1972.75" width="115" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="LCGbGArY_RFEQ7oMjldn-1" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;You dont have account Signup&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="LCGbGArY_RFEQ7oMjldn-1" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;You dont have account Signup&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="750" y="2032.5" width="130" height="15" as="geometry" />
         </mxCell>
-        <mxCell id="LCGbGArY_RFEQ7oMjldn-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LCGbGArY_RFEQ7oMjldn-2" target="GtT6BMB-d2FFimbOd992-1">
+        <mxCell id="LCGbGArY_RFEQ7oMjldn-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="LCGbGArY_RFEQ7oMjldn-2" target="GtT6BMB-d2FFimbOd992-1" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="LCGbGArY_RFEQ7oMjldn-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LCGbGArY_RFEQ7oMjldn-2" target="LCGbGArY_RFEQ7oMjldn-9">
+        <mxCell id="LCGbGArY_RFEQ7oMjldn-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="LCGbGArY_RFEQ7oMjldn-2" target="LCGbGArY_RFEQ7oMjldn-9" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="LCGbGArY_RFEQ7oMjldn-2" value="&lt;b&gt;Signup&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="LCGbGArY_RFEQ7oMjldn-2" value="&lt;b&gt;Signup&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="1284.5" y="550" width="55" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="LCGbGArY_RFEQ7oMjldn-5" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;You already have account Login&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="LCGbGArY_RFEQ7oMjldn-5" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;You already have account Login&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="750" y="1510" width="137.5" height="15" as="geometry" />
         </mxCell>
-        <mxCell id="LCGbGArY_RFEQ7oMjldn-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="LCGbGArY_RFEQ7oMjldn-9" target="GtT6BMB-d2FFimbOd992-2">
+        <mxCell id="LCGbGArY_RFEQ7oMjldn-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="LCGbGArY_RFEQ7oMjldn-9" target="GtT6BMB-d2FFimbOd992-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="LCGbGArY_RFEQ7oMjldn-9" value="Already login" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="1350" y="590" width="70" height="30" as="geometry" />
+        <mxCell id="LCGbGArY_RFEQ7oMjldn-9" value="isLogin" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+          <mxGeometry x="1335" y="600" width="40" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
