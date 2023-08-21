@@ -13,7 +13,7 @@ body {
 	.app {
 		background-color: white;
 		width: 425px;
-		height: 100vh;
+		height: 100%;
 		margin: auto auto;
 	}
 }

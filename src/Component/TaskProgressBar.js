@@ -31,7 +31,9 @@ const TaskProgressBar = (props) => {
       }
     });
 
-    return (objFiltered.length * 100 / obj.length).toFixed();
+    if (objFiltered.length !== 0) {
+      return (objFiltered.length * 100 / obj.length).toFixed();
+    } else {return 0}
   }
 
   return (

@@ -85,10 +85,82 @@ export const currentUserSlice = createSlice({
       localStorage.setItem("users", JSON.stringify(parseUsers));
 
       return cloneState;
+    },
+    addNewTask: (state, action) => {
+      const cloneState = deepStateClone(state);
+      
+      cloneState[0].data.tasks.push(action.payload);
+
+      let getCurrentUser;
+
+      if (localStorage.currentUser) {
+
+        localStorage.removeItem("currentUser");
+        localStorage.setItem("currentUser", JSON.stringify(cloneState[0]));
+
+        getCurrentUser = localStorage.getItem("currentUser");
+
+      } else if (sessionStorage.currentUser) {
+
+        sessionStorage.removeItem("currentUser");
+        sessionStorage.setItem("currentUser", JSON.stringify(cloneState[0]));
+
+        getCurrentUser = sessionStorage.getItem("currentUser");
+
+      }
+
+      const getUsers = localStorage.getItem("users");
+
+      const parseUsers = JSON.parse(getUsers);
+      const parseCurrentUser = JSON.parse(getCurrentUser);
+
+      const userIndex = parseUsers.findIndex(user => user.email === parseCurrentUser.email);
+
+      parseUsers.splice(userIndex, 1);
+      parseUsers.push(cloneState[0]);
+
+      localStorage.setItem("users", JSON.stringify(parseUsers));
+
+    },
+    addNewCategory: (state, action) => {
+      const cloneState = deepStateClone(state);
+      
+      cloneState[0].data.categories.push(action.payload);
+
+      let getCurrentUser;
+
+      if (localStorage.currentUser) {
+
+        localStorage.removeItem("currentUser");
+        localStorage.setItem("currentUser", JSON.stringify(cloneState[0]));
+
+        getCurrentUser = localStorage.getItem("currentUser");
+
+      } else if (sessionStorage.currentUser) {
+
+        sessionStorage.removeItem("currentUser");
+        sessionStorage.setItem("currentUser", JSON.stringify(cloneState[0]));
+
+        getCurrentUser = sessionStorage.getItem("currentUser");
+
+      }
+
+      const getUsers = localStorage.getItem("users");
+
+      const parseUsers = JSON.parse(getUsers);
+      const parseCurrentUser = JSON.parse(getCurrentUser);
+
+      const userIndex = parseUsers.findIndex(user => user.email === parseCurrentUser.email);
+
+      parseUsers.splice(userIndex, 1);
+      parseUsers.push(cloneState[0]);
+
+      localStorage.setItem("users", JSON.stringify(parseUsers));
+      
     }
   },
 })
 
-export const { addCurrentUser, handleTaskChange } = currentUserSlice.actions;
+export const { addCurrentUser, handleTaskChange, addNewTask, addNewCategory } = currentUserSlice.actions;
 
 export default currentUserSlice.reducer;

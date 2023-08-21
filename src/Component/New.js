@@ -1,8 +1,23 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addCurrentUser } from "../rtk/slices/currentUserSlice.js";
+
+import TaskForm from "./TaskForm.js";
 
 const New = (props) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(addCurrentUser())
+  }, [])
+
   return (
-    <div>New</div>
+    <div className="new-task">
+      <Link to="/">{`<Back`}</Link>
+      <h1 className="title">Add New Task</h1>
+      <TaskForm />
+    </div>
   )
 }
 
