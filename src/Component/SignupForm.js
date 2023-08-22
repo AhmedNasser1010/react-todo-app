@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 // import Awesome from "./Awesome.js";
 import { addUser } from "../rtk/slices/usersSlice.js";
 import { useNavigate, Link } from 'react-router-dom';
+import userDataTemplate from "../userDataTemplate.js";
 
 const SignupForm = (props) => {
   const users = useSelector((state) => state.users);
   const navigate = useNavigate();
   
   const dispatch = useDispatch();
-  const [localUser, setLocalUser] = useState({fName: "", lName: "", email: "", password: "", url: "", age: "", sex: "", data: {categories: ["school", "work", "life", "home", "plan"], tasks: {}}});
+  const [localUser, setLocalUser] = useState(userDataTemplate);
 
   function handleChange(e) {
     let value;

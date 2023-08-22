@@ -1,14 +1,20 @@
-import React from 'react';
+import { useEffect } from 'react';
+import { useSelector } from "react-redux";
 
 const IconsList = (props) => {
+  const icons = useSelector((state) => state.icons);
+
+  function handleClick(icon) {
+    props.icon(icon);
+  }
+
   return (
     <div className="icons-list">
-    	<span className="icon">ICON 1</span>
-    	<span className="icon">ICON 2</span>
-    	<span className="icon">ICON 3</span>
-    	<span className="icon">ICON 4</span>
-    	<span className="icon">ICON 5</span>
-    	<span className="icon">ICON 6</span>
+    	{
+        icons.map((icon) => (
+          <i key={icon.name} className={`${icon.style} ${icon.name}`} onClick={() => handleClick(icon)}></i>
+        ))
+      }
     </div>
   )
 }

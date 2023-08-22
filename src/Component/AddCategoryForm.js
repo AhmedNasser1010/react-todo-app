@@ -1,17 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { addNewCategory } from "../rtk/slices/currentUserSlice.js";
 import { useDispatch } from "react-redux";
 
 import IconsList from "./IconsList.js";
 
 const AddCategoryForm = (props) => {
-	// remproray icon link ***
-	const [newCategory, setNewCategory] = useState({title: "", icon: "https://placehold.co/50x50"});
+	// temproray icon link ***
+	const [newCategory, setNewCategory] = useState({title: "", icon: {style: "", name: ""}, HEX: "#607d8b"});
 	const dispatch = useDispatch();
 
 	function handleChange(e) {
 		setNewCategory({...newCategory, title: e.target.value});
 	}
+
+  function handleLiftingIconUp(icon) {
+    setNewCategory({...newCategory, icon: icon});
+  }
+
+  function handleColorChange(e) {
+    setNewCategory({...newCategory, HEX: e.target.value});
+  }
 
 	function handleSubmit(e) {
     e.preventDefault();
@@ -29,7 +37,8 @@ const AddCategoryForm = (props) => {
   return (
     <form onSubmit={handleSubmit}>
     	<input type="text" placeholder="Category Title" value={newCategory.title} onChange={handleChange} />
-    	<IconsList />
+      <input type="color" onChange={handleColorChange} value={newCategory.HEX} />
+    	<IconsList icon={handleLiftingIconUp} />
     	<input type="submit" value="+ Add Category" />
     </form>
   )

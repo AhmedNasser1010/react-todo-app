@@ -14,7 +14,7 @@ const New = (props) => {
 
   return (
     <div className="new-task">
-      <Link to="/">{`<Back`}</Link>
+      <Link to="/"><i className="fa-solid fa-chevron-left"></i></Link>
       <h1 className="title">Add New Task</h1>
       <TaskForm />
     </div>

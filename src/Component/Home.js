@@ -8,12 +8,14 @@ import Avatar from "./Avatar.js";
 import Greeting from "./Greeting.js";
 import ViewMod from "./ViewMod.js";
 import CategoryCard from "./CategoryCard.js";
+import userDataTemplate from "../userDataTemplate.js";
 
 const Home = (props) => {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
   const currentUser = useSelector((state) => state.currentUser[0]);
   const navigate = useNavigate();
+  const [user, setUser] = useState(userDataTemplate);
 
   useEffect(() => {
     if (!(localStorage.currentUser || sessionStorage.currentUser)) {
@@ -21,33 +23,39 @@ const Home = (props) => {
     } else {
       dispatch(addCurrentUser());
     }
-  }, [])
+  }, []);
+
+  useEffect(() => {
+    setUser(currentUser);
+  }, [currentUser]);
 
   function getCountOfTasks() {
-    return currentUser.data.tasks.filter((task) => {
+    const filtered = user.data.tasks.filter((task) => {
       if (!task.isDone) {
         return true;
       }
     })
+
+    return filtered.length
   }
 
   return (
 
     <div className="home">
       <SettingsBtn />
-      <Avatar img={currentUser.url} />
+      <Avatar img={user.url} />
       <div>
-        <Greeting name={currentUser.fName} tasksCount={getCountOfTasks().length} />
+        <Greeting name={user.fName} tasksCount={getCountOfTasks()} />
         <ViewMod />
       </div>
       <div className="categories">
         {
-          currentUser.data.categories.map((cat) => (
-            <CategoryCard key={cat.title} img={cat.icon} categoryTitle={cat.title} />
+          user.data.categories.map((cat) => (
+            <CategoryCard key={cat.title}category={cat} />
           ))
         }
       </div>
-      <Link to="/new" className="add-new-task">+</Link>
+      <Link to="/new" className="add-new-task"><i className="fa-solid fa-plus"></i></Link>
     </div>
 
   )

@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-const CategoryCard = (props) => {
+const CategoryCard = ({ category }) => {
 	const currentUser = useSelector((state) => state.currentUser[0]);
 	const navigate = useNavigate();
 
@@ -29,19 +29,23 @@ const CategoryCard = (props) => {
   }
 
   function getCountOfTasks() {
-    let obj = objFilter.allWith(currentUser.data.tasks, props.categoryTitle)
+    if (currentUser) {
+      let obj = objFilter.allWith(currentUser.data.tasks, category.title)
 
-    return obj.filter((task) => {
-      if (!task.isDone) {
-        return true;
-      }
-    })
+      return obj.filter((task) => {
+        if (!task.isDone) {
+          return true;
+        }
+      })
+    }
+    return [];
   }
 
   return (
-    <div onClick={() => handleClick(props.categoryTitle)} className="category-card">
-    	<img className="image" src={props.img} alt="category icon" />
-    	<h3 className="title">{props.categoryTitle}</h3>
+    <div style={{backgroundColor: category.HEX}} onClick={() => handleClick(category.title)} className="category-card">
+      {/* temporary style */}
+      <i className={`${category.icon.style} ${category.icon.name}`}></i>
+    	<h3 className="title">{category.title}</h3>
     	<span className="tasks-counter">{getCountOfTasks().length} Tasks</span>
     </div>
   )

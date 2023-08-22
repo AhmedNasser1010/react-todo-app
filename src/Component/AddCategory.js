@@ -14,7 +14,7 @@ const AddCategory = (props) => {
 
   return (
     <div className="add-category">
-      <Link to="/">{`<Back`}</Link>
+      <Link to="/"><i className="fa-solid fa-chevron-left"></i></Link>
       <h1 className="title">Add New Category</h1>
       <AddCategoryForm />
     </div>

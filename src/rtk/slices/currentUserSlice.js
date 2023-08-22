@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import userDataTemplate from "../../userDataTemplate.js";
 
 // FW-JS
 function deepStateClone(state) {
@@ -19,25 +20,7 @@ function configStorage(key, payload) {
 
 export const currentUserSlice = createSlice({
   name: 'currentUser',
-  initialState: [{
-    fName: "",
-    lName: "",
-    email: "",
-    password: "",
-    url: "",
-    age: "",
-    sex: "",
-    data: {
-      categories: [
-        {title: "school", icon: ""},
-        {title: "work", icon: ""},
-        {title: "life", icon: ""},
-        {title: "home", icon: ""},
-        {title: "plan", icon: ""}
-      ],
-      tasks: []
-    }
-  }],
+  initialState: [userDataTemplate],
   reducers: {
     addCurrentUser: (state, action) => {
       if (localStorage.currentUser) {
@@ -47,6 +30,14 @@ export const currentUserSlice = createSlice({
         state.pop();
         state.push(JSON.parse(sessionStorage.currentUser));
       }
+    },
+    logout: (state, action) => {
+      if (localStorage.currentUser) {
+        localStorage.removeItem("currentUser");
+      } else if (sessionStorage.currentUser) {
+        sessionStorage.removeItem("currentUser");
+      }
+      state.pop();
     },
     handleTaskChange: (state, action) => {
       const cloneState = deepStateClone(state);
@@ -157,10 +148,50 @@ export const currentUserSlice = createSlice({
 
       localStorage.setItem("users", JSON.stringify(parseUsers));
       
+    },
+    remCurrent: (state, action) => {
+
+      let getCurrentUser;
+      
+      if (localStorage.currentUser) {
+
+        getCurrentUser = localStorage.getItem("currentUser");
+        localStorage.removeItem("currentUser");
+
+      } else if (sessionStorage.currentUser) {
+
+        getCurrentUser = sessionStorage.getItem("currentUser");
+        sessionStorage.removeItem("currentUser");
+
+      }
+
+      state.pop();
+
+      const getUsers = localStorage.getItem("users");
+
+      const parseUsers = JSON.parse(getUsers);
+      const parseCurrentUser = JSON.parse(getCurrentUser);
+
+      const userIndex = parseUsers.findIndex(user => user.email === parseCurrentUser.email);
+
+      parseUsers.splice(userIndex, 1);
+
+      localStorage.setItem("users", JSON.stringify(parseUsers));
+
+    },
+    remAll: (state, action) => {
+      localStorage.removeItem("users");
     }
   },
 })
 
-export const { addCurrentUser, handleTaskChange, addNewTask, addNewCategory } = currentUserSlice.actions;
+export const { addCurrentUser,
+  handleTaskChange,
+  addNewTask,
+  addNewCategory,
+  logout,
+  remCurrent,
+  remAll
+} = currentUserSlice.actions;
 
 export default currentUserSlice.reducer;

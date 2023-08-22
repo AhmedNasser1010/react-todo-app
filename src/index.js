@@ -5,8 +5,8 @@ import reportWebVitals from './reportWebVitals';
 import "./Normaliz.css";
 import "./index.css";
 import "@fontsource/roboto";
-import { store } from './rtk/store'
-import { Provider } from 'react-redux'
+import { store } from './rtk/store';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

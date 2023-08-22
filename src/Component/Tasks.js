@@ -41,7 +41,7 @@ const Tasks = (props) => {
 
   return (
     <div className="tasks">
-      <Link to="/">{`<=`}</Link>
+      <Link to="/"><i className="fa-solid fa-chevron-left"></i></Link>
       <TaskInfo />
       <div className="tasks">
         {

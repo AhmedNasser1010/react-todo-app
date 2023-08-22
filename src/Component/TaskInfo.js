@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom';
 const TaskInfo = (props) => {
 	const { category } = useParams();
 	const currentUser = useSelector((state) => state.currentUser[0]);
-	const [currentCategory, setCurrentCategory] = useState([]);
+	const [currentCategory, setCurrentCategory] = useState([{title: "", icon: {style: "", name: ""}, HEX: ""}]);
 
 	// FW-JS
   const objFilter = {
@@ -41,7 +41,7 @@ const TaskInfo = (props) => {
 
   return (
     <div className="task-info">
-    	<img src={currentCategory[0] && currentCategory[0].icon} alt="category icon" />
+      <i className={`${currentCategory[0].icon.style} ${currentCategory[0].icon.name}`}></i>
     	<div>
     		<h1>{currentCategory[0] && currentCategory[0].title}</h1>
     		<span>{getCountOfTasks().length} Tasks</span>

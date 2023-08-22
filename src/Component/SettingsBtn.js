@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const SettingsBtn = (props) => {
   return (
-    <Link to="/settings">Settings</Link>
+    <Link to="/settings"><i className="fa-solid fa-gear"></i></Link>
   )
 }
 
