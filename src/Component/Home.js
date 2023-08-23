@@ -50,9 +50,12 @@ const Home = (props) => {
       </div>
       <div className="categories">
         {
-          user.data.categories.map((cat) => (
-            <CategoryCard key={cat.title}category={cat} />
+          user.data.categories.map((cat, index) => (
+            <CategoryCard key={index} category={cat} />
           ))
+        }
+        {
+          user.data.categories.length === 0 && <span>There is No Categories Here<br /><Link to="/new/add-category">Add New!</Link></span>
         }
       </div>
       <Link to="/new" className="add-new-task"><i className="fa-solid fa-plus"></i></Link>

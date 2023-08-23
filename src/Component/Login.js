@@ -60,8 +60,8 @@ const Login = (props) => {
         <input className="password" id="password" value={values.password} type="password" name="password" onChange={handleChange} />
       </label>
       <label htmlFor="remember">
-        <input name="rememberMe" className="checkbox" onChange={handleChange} type="checkbox" />
-        <span>Remember me</span>
+        <input name="rememberMe" id="remember" className="checkbox" onChange={handleChange} type="checkbox" />
+        Remember me
       </label>
       <input className="submit" type="submit" value="Signup" />
       <span className="or-signup">You dont have account <Link to="/signup">Signup</Link></span>

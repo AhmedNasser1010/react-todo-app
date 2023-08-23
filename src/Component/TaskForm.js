@@ -29,10 +29,6 @@ const TaskForm = (props) => {
     }
   }
 
-  useEffect(() => {
-    console.log(newTask);
-  }, [newTask])
-
   return (
     <form className="new-task-input" onSubmit={handleSubmit}>
     	<input type="text" name="newTask" placeholder="Task Title" onChange={handleChange} value={newTask.title} />

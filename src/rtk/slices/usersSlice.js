@@ -27,10 +27,13 @@ export const usersSlice = createSlice({
     },
     getUsersFromStorage: (state, action) => {
       return localStorage.users
+    },
+    remUsersData: (state, action) => {
+      return [];
     }
   },
 })
 
-export const { addUser } = usersSlice.actions;
+export const { addUser, getUsersFromStorage, remUsersData } = usersSlice.actions;
 
 export default usersSlice.reducer;

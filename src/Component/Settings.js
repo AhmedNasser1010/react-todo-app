@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
 import { logout, remCurrent, remAll } from "../rtk/slices/currentUserSlice.js";
+import { remUsersData } from "../rtk/slices/usersSlice.js";
 import { useNavigate, Link } from "react-router-dom";
 
 const Settings = (props) => {
@@ -19,6 +20,7 @@ const Settings = (props) => {
 
   function handleRemAll() {
     dispatch(remAll());
+    dispatch(remUsersData());
     navigate("/login");
   }
 

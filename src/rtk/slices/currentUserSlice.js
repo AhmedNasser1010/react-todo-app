@@ -74,16 +74,21 @@ export const currentUserSlice = createSlice({
       parseUsers.push(cloneState[0]);
 
       localStorage.setItem("users", JSON.stringify(parseUsers));
+      console.log("handleTaskChange");
 
       return cloneState;
     },
     addNewTask: (state, action) => {
+      // deep clone slice state
       const cloneState = deepStateClone(state);
-      
+
+      // Update the cloned state with the new task
       cloneState[0].data.tasks.push(action.payload);
 
       let getCurrentUser;
 
+      // replace currentUser storage with the new version
+      // then get currentUser in new variable (getCurrentUser) after the update
       if (localStorage.currentUser) {
 
         localStorage.removeItem("currentUser");
@@ -100,6 +105,9 @@ export const currentUserSlice = createSlice({
 
       }
 
+      // get users data from localStorage
+      // parse() given users and currentUser
+      // get user index from users
       const getUsers = localStorage.getItem("users");
 
       const parseUsers = JSON.parse(getUsers);
@@ -107,10 +115,15 @@ export const currentUserSlice = createSlice({
 
       const userIndex = parseUsers.findIndex(user => user.email === parseCurrentUser.email);
 
+      // remove current user with index in parseUsers
+      // push the new edition of the user with the new task in parseUsers
       parseUsers.splice(userIndex, 1);
       parseUsers.push(cloneState[0]);
 
+      // set parseUsers as a users in localStorage
       localStorage.setItem("users", JSON.stringify(parseUsers));
+
+      return cloneState;
 
     },
     addNewCategory: (state, action) => {
@@ -147,6 +160,8 @@ export const currentUserSlice = createSlice({
       parseUsers.push(cloneState[0]);
 
       localStorage.setItem("users", JSON.stringify(parseUsers));
+
+      return cloneState;
       
     },
     remCurrent: (state, action) => {
@@ -180,7 +195,92 @@ export const currentUserSlice = createSlice({
 
     },
     remAll: (state, action) => {
+
+      if (localStorage.currentUser) {
+
+        localStorage.removeItem("currentUser");
+
+      } else if (sessionStorage.currentUser) {
+
+        sessionStorage.removeItem("currentUser");
+
+      }
+
       localStorage.removeItem("users");
+
+      state.pop();
+    },
+    // remove task btn action
+    // ****** best action orgnize ******
+    remTask: (state, action) => {
+      // deep clone state
+      const cloneState = deepStateClone(state)[0];
+  
+      // get task index
+      const taskIndex = cloneState.data.tasks.findIndex(task => task.title === action.payload.title);
+      
+      // remove current task
+      cloneState.data.tasks.splice(taskIndex, 1);
+
+      // update tasks from state slice
+      state.pop();
+      state.push(cloneState);
+      
+      // update tasks from currentUser storage
+      if (localStorage.currentUser) {
+
+        localStorage.removeItem("currentUser");
+        localStorage.setItem("currentUser", JSON.stringify(cloneState));
+
+      } else if (sessionStorage.currentUser) {
+
+        sessionStorage.removeItem("currentUser");
+        sessionStorage.setItem("currentUser", JSON.stringify(cloneState));
+
+      }
+
+      // update tasks from users storage
+      const users = JSON.parse(localStorage.getItem("users"));
+      const userIndex = users.findIndex(user => user.email === cloneState.email);
+      
+      users.splice(userIndex, 1);
+      users.push(cloneState);
+      localStorage.setItem("users", JSON.stringify(users));
+    },
+    remCategory: (state, action) => {
+      // deep clone state
+      const cloneState = deepStateClone(state)[0];
+  
+      // get task index
+      const categoryIndex = cloneState.data.categories.findIndex(category => category.title === action.payload.title);
+      
+      // remove current task
+      cloneState.data.categories.splice(categoryIndex, 1);
+
+      // update tasks from state slice
+      state.pop();
+      state.push(cloneState);
+      
+      // update tasks from currentUser storage
+      if (localStorage.currentUser) {
+
+        localStorage.removeItem("currentUser");
+        localStorage.setItem("currentUser", JSON.stringify(cloneState));
+
+      } else if (sessionStorage.currentUser) {
+
+        sessionStorage.removeItem("currentUser");
+        sessionStorage.setItem("currentUser", JSON.stringify(cloneState));
+
+      }
+
+      // update tasks from users storage
+      const users = JSON.parse(localStorage.getItem("users"));
+      const userIndex = users.findIndex(user => user.email === cloneState.email);
+      
+      users.splice(userIndex, 1);
+      users.push(cloneState);
+      localStorage.setItem("users", JSON.stringify(users));
     }
   },
 })
@@ -191,7 +291,9 @@ export const { addCurrentUser,
   addNewCategory,
   logout,
   remCurrent,
-  remAll
+  remAll,
+  remTask,
+  remCategory
 } = currentUserSlice.actions;
 
 export default currentUserSlice.reducer;

@@ -24,13 +24,13 @@ const AddCategoryForm = (props) => {
 	function handleSubmit(e) {
     e.preventDefault();
     let isValid = true;
-    if (newCategory.title === "" || newCategory.category === "") {
+    if (newCategory.title === "" || newCategory.icon.name === "") {
       isValid = false;
     }
 
     if (isValid) {
       dispatch(addNewCategory(newCategory));
-      setNewCategory({...newCategory, title: ""});
+      setNewCategory({...newCategory, title: "", icon: {style: "", name: ""}});
     }
   }
 
