@@ -74,7 +74,6 @@ export const currentUserSlice = createSlice({
       parseUsers.push(cloneState[0]);
 
       localStorage.setItem("users", JSON.stringify(parseUsers));
-      console.log("handleTaskChange");
 
       return cloneState;
     },

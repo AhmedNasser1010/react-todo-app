@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { handleTaskChange, remTask } from "../rtk/slices/currentUserSlice.js";
 
-const Task = ({ values }) => {
+const Task = ({ values, index }) => {
 	const dispatch = useDispatch();
 
 	function handleClick() {
@@ -14,10 +14,10 @@ const Task = ({ values }) => {
 
   return (
   	<div className="task-container">
-   		<div className="task" onClick={handleClick}>
-   			<input type="checkbox" className="checkbox" checked={values.isDone} />
-   			<h3 className="discreption">{values.title}</h3>
-   		</div>
+   		<label htmlFor={index} className="task">
+   			<input id={index} type="checkbox" className="checkbox" checked={values.isDone} onChange={handleClick} />
+   			{values.title}
+   		</label>
    		<i className="fa-regular fa-trash-can task-rem-btn" onClick={() => handleTaskRem(values)}></i>
     </div>
   )

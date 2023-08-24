@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import { addCurrentUser } from "../rtk/slices/currentUserSlice.js";
 
-import SettingsBtn from "./SettingsBtn.js";
 import Avatar from "./Avatar.js";
 import Greeting from "./Greeting.js";
 import ViewMod from "./ViewMod.js";
 import CategoryCard from "./CategoryCard.js";
 import userDataTemplate from "../userDataTemplate.js";
+
+import "../css/home.css";
 
 const Home = (props) => {
   const dispatch = useDispatch();
@@ -42,23 +43,22 @@ const Home = (props) => {
   return (
 
     <div className="home">
-      <SettingsBtn />
+      <Link to="/settings" className="gear"><i className="fa-solid fa-gear"></i></Link>
       <Avatar img={user.url} />
       <div>
         <Greeting name={user.fName} tasksCount={getCountOfTasks()} />
-        <ViewMod />
       </div>
-      <div className="categories">
+      <div className="categories single">
         {
           user.data.categories.map((cat, index) => (
             <CategoryCard key={index} category={cat} />
           ))
         }
         {
-          user.data.categories.length === 0 && <span>There is No Categories Here<br /><Link to="/new/add-category">Add New!</Link></span>
+          user.data.categories.length === 0 && <span className="zero-tasks">There is No Categories Here<br /><Link to="/new/add-category">Add New!</Link></span>
         }
+        <Link to="/new" className={`add-new-task ${user.data.categories.length % 2 === 0 ? "duble" : ""}`}><i className="fa-solid fa-plus"></i></Link>
       </div>
-      <Link to="/new" className="add-new-task"><i className="fa-solid fa-plus"></i></Link>
     </div>
 
   )

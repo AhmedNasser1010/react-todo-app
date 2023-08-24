@@ -1,0 +1,141 @@
+.home {
+	position: relative;
+	padding: 80px 20px 0;
+}
+
+.home .gear {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	color: black;
+}
+
+.home .avatar {
+	width: 40px;
+	border-radius: 50%;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	box-shadow: 0px 0px 6px 3px #cfcfcf;
+}
+
+.home div .greeting span {
+	color: gray;
+	padding-top: 5px;
+	display: inline-block;
+}
+
+.home div .greeting span .tasks-count {
+	color: #4136ff;
+}
+
+.home div .greeting div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.home div .greeting div i {
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+.home div .greeting div i.selected {
+	color: #4136ff;
+}
+
+.home .categories.multi {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+  gap: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.home .categories.multi .category-card,
+.home .categories.multi .add-new-task {
+	width: calc((100% - 20px) / 2);
+	height: 192.5px;
+	box-shadow: 0px 0px 10px 0px #7e7e7e;
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.home .categories.multi .add-new-task {
+	background-color: #fe521e;
+	width: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+}
+
+.home .categories.multi .add-new-task.duble {
+	width: 100%;
+	height: 45px;
+}
+
+.home .categories.multi .add-new-task i {
+	color: white;
+}
+
+.home .categories.multi .category-card .progress {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+	height: 20%;
+}
+
+.home .categories.multi .category-card i {
+	background-color: white;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	box-shadow: 0px 0px 10px 0px #cfcfcf;
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 21px;
+	z-index: 1;
+}
+
+.home .categories.multi .category-card .text {
+	position: absolute;
+	top: 75%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	text-align: center;
+}
+
+.home .categories.multi .category-card .title {
+	font-size: 20px;
+}
+
+.home .categories.multi .category-card .text .tasks-counter {
+	font-size: 15px;
+}
+
+.home .categories .zero-tasks {
+	font-size: 20px;
+	color: gray;
+	text-align: center;
+	margin: auto;
+	padding: 100px 0;
+}
+
+.home .categories .zero-tasks a {
+	text-decoration: none;
+	color: #4136ff;
+}
+
+.home .categories.multi {}

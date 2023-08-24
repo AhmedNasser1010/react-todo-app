@@ -1,10 +1,13 @@
-import React from 'react';
+import ViewMod from "./ViewMod.js";
 
 const Greeting = (props) => {
   return (
     <div className="greeting">
     	<h1>Hello, {props.name}</h1>
-    	<span>You Have {props.tasksCount} Tasks Today</span>
+      <div>
+    	  <span>You Have <span className="tasks-count">{props.tasksCount} New Tasks</span> Today</span>
+        <ViewMod />
+      </div>
     </div>
   )
 }

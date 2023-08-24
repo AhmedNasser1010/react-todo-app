@@ -30,7 +30,7 @@ const CategoryCard = ({ category }) => {
 
   function getCountOfTasks() {
     if (currentUser) {
-      let obj = objFilter.allWith(currentUser.data.tasks, category.title)
+      let obj = objFilter.allWith(currentUser.data.tasks, category.title);
 
       return obj.filter((task) => {
         if (!task.isDone) {
@@ -41,12 +41,29 @@ const CategoryCard = ({ category }) => {
     return [];
   }
 
+  function getPearcent() {
+    const checkedTasks = objFilter.allWith(currentUser.data.tasks, category.title).filter((task) => {
+      if (task.isDone) {
+        return true;
+      }
+    }).length;
+    const allTasks = objFilter.allWith(currentUser.data.tasks, category.title).length;
+
+    if (allTasks === 0 || checkedTasks === 0) {
+      return 15;
+    } else {
+      return checkedTasks * 100 / allTasks;
+    }
+  }
+
   return (
-    <div style={{backgroundColor: category.HEX}} onClick={() => handleClick(category.title)} className="category-card">
-      {/* temporary style */}
-      <i className={`${category.icon.style} ${category.icon.name}`}></i>
-    	<h3 className="title">{category.title}</h3>
-    	<span className="tasks-counter">{getCountOfTasks().length} Tasks</span>
+    <div onClick={() => handleClick(category.title)} className="category-card">
+      <i className={`${category.icon.style} ${category.icon.name}`} style={{color: category.HEX}}></i>
+    	<div className="text">
+        <h3 className="title">{category.title}</h3>
+        <span className="tasks-counter">{getCountOfTasks().length} Tasks</span>
+      </div>
+      <span className="progress" style={{backgroundColor: category.HEX, height: `${getPearcent()}%`}}></span>
     </div>
   )
 }

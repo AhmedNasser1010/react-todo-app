@@ -21,8 +21,8 @@ body {
 /* Small screens */
 @media only screen and (max-width: 600px) {
 	.app {
+		background-color: white;
 		max-width: 100%;
-		background-color: red;
     display: flex;
     flex-direction: column;
     margin: 0px 30px;
