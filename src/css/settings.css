@@ -1,0 +1,29 @@
+.settings {
+	background-color: #0064ff;
+	min-height: 100vh;
+	color: white;
+	padding: 0 20px;
+}
+
+.settings .back-btn {
+	color: white;
+	margin: 50px 0;
+	font-size: 22px;
+}
+
+.settings .btns {}
+
+.settings .btns .btn {
+	display: block;
+	text-align: center;
+	padding: 10px 0;
+	border: 1px solid white;
+	margin-bottom: 15px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.settings .btns .btn:hover {
+	border-color: #fe521e;
+	background-color: #fe521e;
+}

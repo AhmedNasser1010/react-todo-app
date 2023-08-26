@@ -1,0 +1,105 @@
+.new-task {
+	background-color: #fe521e;
+	padding: 0 20px 80px;
+	min-height: 100vh;
+	color: white;
+}
+
+.new-task .back-btn {
+	color: white;
+	margin: 50px 0;
+	font-size: 22px;
+}
+
+.new-task h1.title {
+	margin-bottom: 30px;
+}
+
+.new-task .new-task-input .task-input {
+	all: unset;
+	color: white;
+	border-bottom: 1px solid white;
+	cursor: text;
+	width: 100%;
+	padding: 3px 0;
+}
+
+.new-task .new-task-input .task-input::placeholder {
+	color: white;
+}
+
+.new-task .new-task-input .categories {
+	padding-top: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.new-task .new-task-input .categories .category {
+	position: relative;
+	background-color: #fe744b;
+	padding: 15px 20px 15px 40px;
+	border-radius: 5px;
+	width: calc(100% / 2 - 70px);
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.new-task .new-task-input .categories .category.selected {
+	background-color: white;
+	color: black;
+}
+
+.new-task .new-task-input .categories .category .before {
+	width: 10px;
+	height: 10px;
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 20px;
+	transform: translateY(-50%);
+}
+
+.new-task .new-task-input .categories .add-category {
+	text-decoration: none;
+	font-size: 22px;
+	color: white;
+	text-align: center;
+	position: relative;
+}
+
+.new-task .new-task-input .categories .add-category i {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.new-task .new-task-input .categories .category .task-rem-btn {
+	position: absolute;
+	right: 5px;
+	bottom: 5px;
+	font-size: 13px;
+	color: #fe521e;
+	transition: 0.3s;
+}
+
+.new-task .new-task-input .categories .category .task-rem-btn:hover {
+	color: red;
+}
+
+.new-task .new-task-input .submit {
+	all: unset;
+	position: fixed;
+	bottom: 25px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: calc(425px - 40px);
+	background-color: white;
+	color: #fe521e;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 5px;
+	padding: 10px 0;
+	cursor: pointer;
+}

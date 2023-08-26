@@ -1,8 +1,10 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from "react-redux";
 import { logout, remCurrent, remAll } from "../rtk/slices/currentUserSlice.js";
 import { remUsersData } from "../rtk/slices/usersSlice.js";
 import { useNavigate, Link } from "react-router-dom";
+
+import "../css//settings.css";
 
 const Settings = (props) => {
   const dispatch = useDispatch();
@@ -26,7 +28,7 @@ const Settings = (props) => {
 
   return (
     <div className="settings">
-      <Link to="/"><i className="fa-solid fa-chevron-left"></i></Link>
+      <Link to="/"><i className="back-btn fa-solid fa-chevron-left"></i></Link>
       <div className="btns">
         <span className="btn logout" onClick={handleLogout}>Logout</span>
         <span className="btn rem-current" onClick={handleRemCurrent}>Remove Current Account</span>

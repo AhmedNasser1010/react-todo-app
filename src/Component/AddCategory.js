@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import { addCurrentUser } from "../rtk/slices/currentUserSlice.js";
 import { Link } from "react-router-dom";
 
+import "../css/addCategory.css";
+
 import AddCategoryForm from "./AddCategoryForm.js";
 
 const AddCategory = (props) => {
@@ -14,8 +16,8 @@ const AddCategory = (props) => {
 
   return (
     <div className="add-category">
-      <Link to="/"><i className="fa-solid fa-chevron-left"></i></Link>
-      <h1 className="title">Add New Category</h1>
+      <Link to="/new"><i className="fa-solid fa-chevron-left back-btn"></i></Link>
+      <h1 className="title">Add new category</h1>
       <AddCategoryForm />
     </div>
   )

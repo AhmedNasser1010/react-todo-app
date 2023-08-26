@@ -9,7 +9,20 @@ const NewTaskCategories = (props) => {
 
 	function handleCategoryChange(cat) {
 		props.category(cat);
+
+		const current = document.querySelector(`.category.${cat}`);
+		const categories = Array.from(document.querySelectorAll(`.category`));
+		categories.splice(-1, 1);
+
+		categories.forEach(category => category.classList.remove(`selected`));
+
+		current.classList.add(`selected`);
 	}
+
+	useEffect(() => {
+		const categories = Array.from(document.querySelectorAll(`.category`));
+		categories[0].classList.add("selected");
+	}, []);
 
 	function handleTaskRem(category) {
 		dispatch(remCategory(category));
@@ -19,14 +32,14 @@ const NewTaskCategories = (props) => {
     <div className="categories">
     	{
     		currentUser[0].data.categories.map((category, index) => (
-    			// temprary style
-    			<span style={{margin: "0 5px", cursor: "pointer"}} key={index} className={`category ${category.title}`} data-hex onClick={() => handleCategoryChange(category.title)}>
+    			<span key={index} className={`category ${category.title}`} data-category={category.title} onClick={() => handleCategoryChange(category.title)}>
+    				<span className="before" style={{backgroundColor: category.HEX}}></span>
     				{category.title}
     				<i className="fa-regular fa-trash-can task-rem-btn" onClick={() => handleTaskRem(category)}></i>
     			</span>
     		))
     	}
-    	<Link to="/new/add-category" className="category add-category">+</Link>
+    	<Link to="/new/add-category" className="category add-category"><i className="fa-solid fa-plus"></i></Link>
     </div>
   )
 }

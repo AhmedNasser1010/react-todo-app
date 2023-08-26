@@ -29,11 +29,19 @@ const TaskForm = (props) => {
     }
   }
 
+  useEffect(() => {
+    const categories = Array.from(document.querySelectorAll(`.category`));
+    const value = categories[0].getAttribute("data-category");
+    if (value) {
+      setNewTask({...newTask, category: value});
+    }
+  }, []);
+
   return (
     <form className="new-task-input" onSubmit={handleSubmit}>
-    	<input type="text" name="newTask" placeholder="Task Title" onChange={handleChange} value={newTask.title} />
+    	<input className="task-input" type="text" name="newTask" placeholder="Task Title" onChange={handleChange} value={newTask.title} />
       <NewTaskCategories category={handleCategoryChange} />
-      <input type="submit" className="add" value="+ Add Task" />
+      <input type="submit" className="submit" value="+ ADD TASK" />
     </form>
   )
 }

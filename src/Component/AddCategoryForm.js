@@ -3,6 +3,7 @@ import { addNewCategory } from "../rtk/slices/currentUserSlice.js";
 import { useDispatch } from "react-redux";
 
 import IconsList from "./IconsList.js";
+import ColorSelect from "./ColorSelect.js";
 
 const AddCategoryForm = (props) => {
 	// temproray icon link ***
@@ -17,8 +18,8 @@ const AddCategoryForm = (props) => {
     setNewCategory({...newCategory, icon: icon});
   }
 
-  function handleColorChange(e) {
-    setNewCategory({...newCategory, HEX: e.target.value});
+  function handleLiftingColorUp(color) {
+    setNewCategory({...newCategory, HEX: color});
   }
 
 	function handleSubmit(e) {
@@ -34,12 +35,14 @@ const AddCategoryForm = (props) => {
     }
   }
 
+  useEffect(() => {console.log(newCategory);}, [newCategory])
+
   return (
     <form onSubmit={handleSubmit}>
-    	<input type="text" placeholder="Category Title" value={newCategory.title} onChange={handleChange} />
-      <input type="color" onChange={handleColorChange} value={newCategory.HEX} />
+    	<input className="text-input" type="text" placeholder="Category Title" value={newCategory.title} onChange={handleChange} />
+      <ColorSelect color={handleLiftingColorUp} defaultColor={newCategory.HEX} />
     	<IconsList icon={handleLiftingIconUp} />
-    	<input type="submit" value="+ Add Category" />
+    	<input className="submit" type="submit" value="+ Add Category" />
     </form>
   )
 }

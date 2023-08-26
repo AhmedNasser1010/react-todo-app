@@ -1,5 +1,7 @@
-.home {
+div.home {
 	position: relative;
+	min-height: 100vh;
+	background-color: white;
 	padding: 80px 20px 0;
 }
 

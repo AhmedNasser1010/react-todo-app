@@ -8,10 +8,18 @@ body {
 	background-color: black;
 }
 
+.app {
+	min-height: 100vh;
+}
+
+.app div.add-category,
+.app .home {
+	transition: 1s;
+}
+
 /* Large monitors */
 @media screen and (min-width: 600px) {
 	.app {
-		background-color: white;
 		width: 425px;
 		height: 100%;
 		margin: auto auto;
@@ -21,7 +29,6 @@ body {
 /* Small screens */
 @media only screen and (max-width: 600px) {
 	.app {
-		background-color: white;
 		max-width: 100%;
     display: flex;
     flex-direction: column;

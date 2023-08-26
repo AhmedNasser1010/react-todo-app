@@ -1,5 +1,6 @@
 .signup {
 	background-color: #4caf50;
+	min-height: 100vh;
 }
 
 .signup h1.title {

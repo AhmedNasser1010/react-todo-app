@@ -1,0 +1,103 @@
+div.add-category {
+	background-color: #fe521e;
+	min-height: 100vh;
+	padding: 0 20px 80px;
+	color: white;
+}
+
+.add-category .back-btn {
+	color: white;
+	margin: 50px 0;
+	font-size: 22px;
+}
+
+.add-category h1.title {
+	margin-bottom: 30px;
+}
+
+.add-category form .text-input {
+	all: unset;
+	color: white;
+	border-bottom: 1px solid white;
+	cursor: text;
+	width: 100%;
+	padding: 3px 0;
+}
+
+.add-category form .text-input::placeholder {
+	color: white;
+}
+
+.add-category form .submit {
+	all: unset;
+	position: fixed;
+	bottom: 25px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: calc(425px - 40px);
+	background-color: white;
+	color: #fe521e;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 5px;
+	padding: 10px 0;
+	cursor: pointer;
+}
+
+.add-category form .color-list h3 {
+	margin: 50px 0 10px;
+}
+
+.add-category form .icons-list h3 {
+	margin: 30px 0 10px;
+}
+
+.add-category form .color-list .list {
+	display: flex;
+	flex-direction: row;
+}
+
+.add-category form .color-list .color-input {}
+
+.add-category form .color-list .color {
+	width: 25px;
+	height: 25px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.add-category form .color-list .color:hover {
+	transform: scale(1.2);
+}
+
+.add-category form .color-list .color.selected {
+	transform: scale(1.2);
+}
+
+.add-category form .icons-list .list {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}
+
+.add-category form .icons-list .list .icon {
+	font-size: 19px;
+	color: white;
+	width: 35px;
+	height: 35px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #fe744b;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.add-category form .icons-list .list .icon:hover {
+	transform: scale(1.2);
+}
+
+.add-category form .icons-list .list .icon.selected {
+	transform: scale(1.2);
+}

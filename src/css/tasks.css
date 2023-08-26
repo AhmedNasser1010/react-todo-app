@@ -1,0 +1,61 @@
+div.tasks {
+	background-color: #0064ff;
+	min-height: 100vh;
+	padding: 0 20px;
+}
+
+div.tasks .back-btn {
+	font-size: 22px;
+	color: white;
+	margin: 50px 0;
+}
+
+div.tasks .task-info {
+	display: flex;
+	align-items: flex-start;
+	color: white;
+}
+
+div.tasks .task-info i {
+	color: #0064ff;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+	margin: 5px 10px 0 0;
+}
+
+div.tasks .task-info div span {
+	color: #337bf9;
+	margin-top: 3px;
+}
+
+div.tasks .empty {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	color: white;
+}
+
+div.tasks .empty a {
+	text-decoration: none;
+	color: #fe521e;
+}
+
+div.tasks .tasks {
+	display: flex;
+	flex-direction: column;
+}
+
+div.tasks .tasks .task-container  {
+	margin-bottom: 30px;
+}
+
+div.tasks .tasks .task-container  {
+
+}

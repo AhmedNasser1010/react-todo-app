@@ -7,6 +7,8 @@ import TaskInfo from "./TaskInfo.js";
 import Task from "./Task.js";
 import TaskProgressBar from "./TaskProgressBar.js";
 
+import "../css/tasks.css";
+
 const Tasks = (props) => {
 	const { category } = useParams();
   const currentUser = useSelector((state) => state.currentUser[0]);
@@ -41,14 +43,14 @@ const Tasks = (props) => {
 
   return (
     <div className="tasks">
-      <Link to="/"><i className="fa-solid fa-chevron-left"></i></Link>
+      <Link to="/"><i className="fa-solid fa-chevron-left back-btn"></i></Link>
       <TaskInfo />
       <div className="tasks">
         {
-          tasks.map((task, index) => (<Task key={index} values={task} index={index} />))
+          tasks.map((task, index) => (<Task key={index} className values={task} index={index} />))
         }
         {
-          tasks.length === 0 && <span>There is No Tasks Here<br /><Link to="/new">Add New!</Link></span>
+          tasks.length === 0 && <span className="empty">There is No Tasks Here<br /><Link to="/new">Add New!</Link></span>
         }
       </div>
       <TaskProgressBar />

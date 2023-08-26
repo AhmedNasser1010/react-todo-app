@@ -1,5 +1,3 @@
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import {BrowserRouter , Routes , Route} from 'react-router-dom';
 
 import Home from "./Component/Home.js";
