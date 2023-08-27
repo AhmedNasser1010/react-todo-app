@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-const CategoryCard = ({ category }) => {
+const CategoryCard = ({ category, bg }) => {
 	const currentUser = useSelector((state) => state.currentUser[0]);
 	const navigate = useNavigate();
 
@@ -57,7 +57,7 @@ const CategoryCard = ({ category }) => {
   }
 
   return (
-    <div onClick={() => handleClick(category.title)} className="category-card">
+    <div onClick={() => handleClick(category.title)} className="category-card" style={{backgroundColor: bg}}>
       <i className={`${category.icon.style} ${category.icon.name}`} style={{color: category.HEX}}></i>
     	<div className="text">
         <h3 className="title">{category.title}</h3>

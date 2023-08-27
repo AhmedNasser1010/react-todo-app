@@ -1,12 +1,17 @@
 import ViewMod from "./ViewMod.js";
 
-const Greeting = (props) => {
+const Greeting = ({ isSingle, name, tasksCount }) => {
+
+  function handleIsSingle(value) {
+    isSingle(value);
+  }
+
   return (
     <div className="greeting">
-    	<h1>Hello, {props.name}</h1>
+    	<h1>Hello, {name}</h1>
       <div>
-    	  <span>You Have <span className="tasks-count">{props.tasksCount} New Tasks</span> Today</span>
-        <ViewMod />
+    	  <span>You Have <span className="tasks-count">{tasksCount} New Tasks</span> Today</span>
+        <ViewMod isSingle={handleIsSingle} />
       </div>
     </div>
   )
