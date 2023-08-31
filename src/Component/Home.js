@@ -17,7 +17,7 @@ import Swiper from 'swiper';
 import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+// import 'swiper/css/pagination';
 
 const Home = (props) => {
   const dispatch = useDispatch();
@@ -76,74 +76,9 @@ const Home = (props) => {
     return filtered.length
   }
 
-  // function isSingle() {
-  //   const ele = document.querySelector(".categories");
-  //   console.log(ele);
-
-  //   if (ele.classList.contains("singel")) {
-  //     return true;
-  //   } else {return false;}
-  // }
-
   function handleIsSingle(value) {
     setIsSingle(value);
   }
-
-  // return (
-
-  //   <div className="home">
-  //     <Link to="/settings" className="gear"><i className="fa-solid fa-gear"></i></Link>
-  //     <Avatar img={user.url} />
-  //     <div>
-  //       <Greeting name={user.fName} tasksCount={getCountOfTasks()} />
-  //     </div>
-  //     <div className="categories single swiper">
-  //       <div className="swiper-wrapper">
-  //         {
-  //           user.data.categories.map((cat, index) => (
-  //             <div className="swiper-slide">
-  //               <CategoryCard key={index} category={cat} />
-  //             </div>
-  //           ))
-  //         }
-  //       </div>
-
-  //       <div className="swiper-pagination"></div>
-      
-  //       <div className="swiper-button-prev"></div>
-  //       <div className="swiper-button-next"></div>
-
-  //       <div className="swiper-scrollbar"></div>
-
-  //       {
-  //         user.data.categories.length === 0 && <span className="zero-tasks">There is No Categories Here<br /><Link to="/new/add-category">Add New!</Link></span>
-  //       }
-  //       <Link to="/new" className={`add-new-task ${user.data.categories.length % 2 === 0 ? "duble" : ""}`}><i className="fa-solid fa-plus"></i></Link>
-  //     </div>
-  //   </div>
-
-  // )
-
-  // return (
-  //   <div className="home">
-  //     <div className="swiper">
-
-  //       <div className="swiper-wrapper">
-  //         <div className="swiper-slide">Slide 1</div>
-  //         <div className="swiper-slide">Slide 2</div>
-  //         <div className="swiper-slide">Slide 3</div>
-  //       </div>
-
-  //       <div className="swiper-pagination"></div>
-      
-  //       <div className="swiper-button-prev"></div>
-  //       <div className="swiper-button-next"></div>
-
-  //       <div className="swiper-scrollbar"></div>
-
-  //     </div>
-  //   </div>
-  // )
 
   return (
     <div className="home">
@@ -152,12 +87,10 @@ const Home = (props) => {
       <div>
         <Greeting name={user.fName} tasksCount={getCountOfTasks()} isSingle={handleIsSingle} />
       </div>
-      <div className="categories multi">
+      <div className="categories single">
         {
           isSingle ? <HomeThemeSingle user={user} /> : <HomeThemeMulti user={user} />
         }
-        {/*<HomeThemeSingle user={user} />
-        <HomeThemeMulti user={user} />*/}
       </div>
     </div>
   );

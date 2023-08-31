@@ -29,7 +29,7 @@ div.tasks .task-info i {
 }
 
 div.tasks .task-info div span {
-	color: #337bf9;
+	color: #ffffff99;
 	margin-top: 3px;
 }
 
@@ -50,12 +50,79 @@ div.tasks .empty a {
 div.tasks .tasks {
 	display: flex;
 	flex-direction: column;
+	margin-top: 80px;
+	position: relative;
 }
 
 div.tasks .tasks .task-container  {
-	margin-bottom: 30px;
+	margin-bottom: 70px;
+	display: flex;
+	align-items: center;
 }
 
-div.tasks .tasks .task-container  {
+div.tasks .tasks .task-container .task .checkbox {
+	display: none;
+}
 
+div.tasks .tasks .task-container .task .custom-checkbox {
+	width: 15px;
+  height: 15px;
+  border: 2px solid white;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+div.tasks .tasks .task-container .task .custom-checkbox::before {
+	content: "\f00c";
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 18px;
+	opacity: 0;
+	transition: 0.3s;
+	color: white;
+}
+
+div.tasks .tasks .task-container.checked .task .custom-checkbox {
+	background-color: #0064ff;
+	border-color: #0064ff;
+}
+
+div.tasks .tasks .task-container.checked .task .custom-checkbox::before {
+	opacity: 1;
+}
+
+div.tasks .tasks .task-container .task span.task-title {
+	position: absolute;
+	left: 55px;
+	padding: 10px 50px 10px 10px;
+	width: calc(100% - 60px);
+	background-color: white;
+	border-radius: 5px;
+	transform: translateY(-25px);
+	min-height: 50px;
+	color: #242424;
+}
+
+div.tasks .tasks .task-container.checked .task span.task-title {
+	background-color: #ffffff63;
+	color: white;
+}
+
+div.tasks .tasks .task-container .task-rem-btn {
+	position: absolute;
+	right: 45px;
+	bottom: 5px;
+	color: #00000078;
+	transition: 0.3s;
+	cursor: pointer;
+}
+
+div.tasks .tasks .task-container .task-rem-btn:hover {
+	color: red;
 }

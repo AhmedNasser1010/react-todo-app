@@ -47,7 +47,7 @@ const Tasks = (props) => {
       <TaskInfo />
       <div className="tasks">
         {
-          tasks.map((task, index) => (<Task key={index} className="task" values={task} index={index} />))
+          tasks.map((task, index) => (<Task key={index} className="task" values={task} index={index} deleteVisibility={true} />))
         }
         {
           tasks.length === 0 && <span className="empty">There is No Tasks Here<br /><Link to="/new">Add New!</Link></span>

@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import CardTasks from "./CardTasks.js";
 
 const CategoryCard = ({ category, bg }) => {
 	const currentUser = useSelector((state) => state.currentUser[0]);
@@ -41,7 +42,7 @@ const CategoryCard = ({ category, bg }) => {
     return [];
   }
 
-  function getPearcent() {
+  function getPercent() {
     const checkedTasks = objFilter.allWith(currentUser.data.tasks, category.title).filter((task) => {
       if (task.isDone) {
         return true;
@@ -56,14 +57,29 @@ const CategoryCard = ({ category, bg }) => {
     }
   }
 
+  function isSingle() {
+    const ele = document.querySelector(".categories");
+    if (ele) {
+      if (ele.classList.contains("single")) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+
   return (
-    <div onClick={() => handleClick(category.title)} className="category-card" style={{backgroundColor: bg}}>
-      <i className={`${category.icon.style} ${category.icon.name}`} style={{color: category.HEX}}></i>
-    	<div className="text">
+    <div className="category-card" style={{backgroundColor: bg}}>
+      <i className={`${category.icon.style} ${category.icon.name} main-icon`} style={{color: category.HEX}}></i>
+      <i className={`${category.icon.style} ${category.icon.name} back-icon`} style={{visibility: "hidden"}}></i>
+    	<div className="text" onClick={() => handleClick(category.title)}>
         <h3 className="title">{category.title}</h3>
         <span className="tasks-counter">{getCountOfTasks().length} Tasks</span>
       </div>
-      <span className="progress" style={{backgroundColor: category.HEX, height: `${getPearcent()}%`}}></span>
+      <span className="progress" style={{backgroundColor: category.HEX, height: `${getPercent()}%`}}></span>
+      {
+        isSingle() && <CardTasks user={currentUser} percent={getPercent} category={category} />
+      }
     </div>
   )
 }
