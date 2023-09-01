@@ -1,0 +1,180 @@
+.login {
+	background-color: #214fff;
+	min-height: 100vh;
+	color: white;
+}
+
+.login h1.title {
+	padding: 70px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.login form {
+	padding: 0 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.login form label input.email,
+.login form label input.password {
+	all: unset;
+	display: block;
+	width: calc(100% - 20px);
+	border: 1px solid transparent;
+	padding: 10px;
+	margin: 5px 0 20px;
+	cursor: text;
+	border-bottom-color: white;
+}
+
+.login form label {
+	position: relative;
+}
+
+.login form label::before {
+	content: "*";
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #ff2c2c;
+	opacity: 0;
+	transition: 0.3s;
+}
+
+.login form label.notValid::before {
+	opacity: 1;
+}
+
+.login form label.notValid input {
+	border-bottom-color: #ff2c2c;
+}
+
+.login form label.notValid input::placeholder {
+	color: #ff2c2c;
+}
+
+.login form label input::placeholder {
+	color: white;
+}
+
+.login form input.submit {
+	all: unset;
+	text-align: center;
+	border-radius: 5px;
+	font-weight: bold;
+	color: white;
+	padding: 10px;
+	background-color: white;
+	cursor: pointer;
+	color:  #214fff;
+}
+
+.login form input.checkbox {
+	display: none;
+}
+
+.custom-checkbox {
+	width: 13px;
+  height: 13px;
+  border: 2px solid white;
+  border-radius: 5px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+
+  margin-right: 5px;
+}
+
+.custom-checkbox::before {
+	content: "\f00c";
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 18px;
+	opacity: 0;
+	transition: 0.3s;
+	color: white;
+}
+
+.custom-checkbox-container.checked .custom-checkbox {
+	background-color: #0064ff;
+	border-color: #0064ff;
+}
+
+.custom-checkbox-container.checked .custom-checkbox::before {
+	opacity: 1;
+}
+
+.custom-checkbox-container {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.login form .or-signup {
+  font-size: 13px;
+  text-align: end;
+  margin-top: 3px;
+}
+
+.login form .or-signup a {
+	text-decoration: none;
+	color: #c6a7fe;
+}
+
+.login form .or {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.login form .or .title {
+	text-align: center;
+	display: block;
+	position: relative;
+}
+
+.login form .or .title::before {
+	content: "";
+	position: absolute;
+	width: 33%;
+	height: 1px;
+	background-color: white;
+	top: 50%;
+	left: 0;
+}
+
+.login form .or .title::after {
+	content: "";
+	position: absolute;
+	width: 33%;
+	height: 1px;
+	background-color: white;
+	top: 50%;
+	right: 0;
+}
+
+.login form .or div {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin-top: 10px;
+}
+
+.login form .or .icon {
+	width: 120px;
+	height: 50px;
+	background-color: #5473ff;
+	border-radius: 5px;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.login form .or .google {}
+
+.login form .or .facebook {}

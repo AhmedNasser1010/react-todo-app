@@ -7,6 +7,10 @@ const CategoryCard = ({ category, bg }) => {
 	const currentUser = useSelector((state) => state.currentUser[0]);
 	const navigate = useNavigate();
 
+  useEffect(() => {
+    console.log(currentUser);
+  }, [currentUser])
+
   // FW-JS
   const objFilter = {
     allWith: function (objsArr, category) {
@@ -43,17 +47,19 @@ const CategoryCard = ({ category, bg }) => {
   }
 
   function getPercent() {
-    const checkedTasks = objFilter.allWith(currentUser.data.tasks, category.title).filter((task) => {
-      if (task.isDone) {
-        return true;
-      }
-    }).length;
-    const allTasks = objFilter.allWith(currentUser.data.tasks, category.title).length;
+    if (currentUser) {
+      const checkedTasks = objFilter.allWith(currentUser.data.tasks, category.title).filter((task) => {
+        if (task.isDone) {
+          return true;
+        }
+      }).length;
+      const allTasks = objFilter.allWith(currentUser.data.tasks, category.title).length;
 
-    if (allTasks === 0 || checkedTasks === 0) {
-      return 15;
-    } else {
-      return checkedTasks * 100 / allTasks;
+      if (allTasks === 0 || checkedTasks === 0) {
+        return 15;
+      } else {
+        return checkedTasks * 100 / allTasks;
+      }
     }
   }
 

@@ -1,6 +1,7 @@
 .signup {
-	background-color: #4caf50;
+	background-color: #fe521e;
 	min-height: 100vh;
+	color: white;
 }
 
 .signup h1.title {
@@ -15,20 +16,73 @@
 	flex-direction: column;
 }
 
-.signup form label {}
+.signup form label {
+/*	background-color: #fe744b;
+	border-radius: 15px;
+	padding: 15px 15px 5px 10px;
+	margin-bottom: 20px;*/
+}
+
+.signup form label.ageSex div,
+.signup form label {
+	position: relative;
+}
+
+.signup form label.ageSex div::before ,
+.signup form label::before {
+	content: "*";
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: #c80000;
+	opacity: 0;
+	transition: 0.3s;
+}
+
+.signup form label.ageSex div.notValid-other::before,
+.signup form label.notValid::before {
+	opacity: 1;
+}
+
+
+.signup form label.notValid input {
+	border-bottom-color: #c80000;
+}
+
+.signup form label.notValid input::placeholder {
+	color: #c80000;
+}
+
+.signup form label.ageSex div.notValid-other::before {
+	top: -10px;
+}
 
 .signup form label input {
 	all: unset;
 	display: block;
 	width: calc(100% - 20px);
-	border: 2px solid;
+	border: 1px solid transparent;
 	padding: 10px;
 	margin: 5px 0 20px;
 	cursor: text;
+	border-bottom-color: white;
+}
+
+.signup form label input::placeholder {
+	color: white;
+}
+
+.signup form label.ageSex {
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
 
 .signup form label.ageSex div {
 	display: flex;
+}
+
+.signup form label.ageSex div .age {
+	text-align: center;
 }
 
 .signup form label.ageSex div .age,
@@ -36,14 +90,24 @@
 	width: calc(100% / 3);
 }
 
+.signup form label.ageSex div .age {
+	border-color: white;
+}
+
 .signup form label.ageSex div .sex {
-	border: 2px solid;
+	border: 1px solid;
 	border-left-color: transparent;
 	margin: 5px 0 20px;
 	display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.signup form label.ageSex div .sex.selected {
+	background-color: white;
+	color: #fe521e;
 }
 
 .signup form label input.checkbox {
@@ -58,6 +122,71 @@
 	font-weight: bold;
 	color: white;
 	padding: 10px;
-	background-color: crimson;
+	background-color: white;
 	cursor: pointer;
+	color: #fe521e;
 }
+
+.signup form .or-signup {
+  font-size: 13px;
+  text-align: end;
+  margin-top: 3px;
+}
+
+.signup form .or-signup a {
+	text-decoration: none;
+	color: blue;
+}
+
+.signup form .or {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.signup form .or .title {
+	text-align: center;
+	display: block;
+	position: relative;
+}
+
+.signup form .or .title::before {
+	content: "";
+	position: absolute;
+	width: 33%;
+	height: 1px;
+	background-color: white;
+	top: 50%;
+	left: 0;
+}
+
+.signup form .or .title::after {
+	content: "";
+	position: absolute;
+	width: 33%;
+	height: 1px;
+	background-color: white;
+	top: 50%;
+	right: 0;
+}
+
+.signup form .or div {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	margin-top: 10px;
+}
+
+.signup form .or .icon {
+	width: 120px;
+	height: 50px;
+	background-color: #fe744b;
+	border-radius: 5px;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.signup form .or .google {}
+
+.signup form .or .facebook {}
