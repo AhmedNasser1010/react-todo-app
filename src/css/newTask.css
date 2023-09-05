@@ -94,12 +94,12 @@
 	bottom: 25px;
 	left: 50%;
 	transform: translateX(-50%);
-	width: calc(425px - 40px);
+	width: 425px;
 	background-color: white;
 	color: #fe521e;
-	font-weight: bold;
 	text-align: center;
 	border-radius: 5px;
 	padding: 10px 0;
 	cursor: pointer;
+	box-shadow: #ffffff3d 0px 10px 30px 0px;
 }

@@ -3,13 +3,20 @@ import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import CardTasks from "./CardTasks.js";
 
+import WaveEffect from "./WaveEffect.js";
+
+// for my own framework
+function hexToRgb(hex, result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)) {
+  return result ? result.slice(1).map(i => parseInt(i, 16)).join(', ') : null;
+}
+
+function rgbToHex(r, g, b) {
+  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
 const CategoryCard = ({ category, bg }) => {
 	const currentUser = useSelector((state) => state.currentUser[0]);
 	const navigate = useNavigate();
-
-  useEffect(() => {
-    console.log(currentUser);
-  }, [currentUser])
 
   // FW-JS
   const objFilter = {
@@ -56,7 +63,7 @@ const CategoryCard = ({ category, bg }) => {
       const allTasks = objFilter.allWith(currentUser.data.tasks, category.title).length;
 
       if (allTasks === 0 || checkedTasks === 0) {
-        return 15;
+        return 0;
       } else {
         return checkedTasks * 100 / allTasks;
       }
@@ -74,15 +81,30 @@ const CategoryCard = ({ category, bg }) => {
     }
   }
 
+  function handleTaskCounterColor() {
+    if (getPercent() > 13) {
+      return "white";
+    }
+    return "gray";
+  }
+
+  function handleTitlColor() {
+    if (getPercent() > 23) {
+      return "white";
+    }
+    return "#292929";
+  }
+
   return (
-    <div className="category-card" style={{backgroundColor: bg}}>
+    <div className="category-card" style={{backgroundColor: bg, boxShadow: `rgba(${hexToRgb(category.HEX)}, 36%) 0px 60px 40px -35px`}}>
       <i className={`${category.icon.style} ${category.icon.name} main-icon`} style={{color: category.HEX}}></i>
       <i className={`${category.icon.style} ${category.icon.name} back-icon`} style={{visibility: "hidden"}}></i>
     	<div className="text" onClick={() => handleClick(category.title)}>
-        <h3 className="title">{category.title}</h3>
-        <span className="tasks-counter">{getCountOfTasks().length} Tasks</span>
+        <h3 className="title" style={{color: handleTitlColor()}}>{category.title}</h3>
+        <span className="tasks-counter" style={{color: handleTaskCounterColor()}}>{getCountOfTasks().length} Tasks</span>
       </div>
       <span className="progress" style={{backgroundColor: category.HEX, height: `${getPercent()}%`}}></span>
+      <WaveEffect rgb={hexToRgb(category.HEX)} numOfWaves={1} wavesWidth="100%" wavesHeight="20px" height={`calc(${getPercent()}% + 20px)`} bgColor={category.HEX} />
       {
         isSingle() && <CardTasks user={currentUser} percent={getPercent} category={category} />
       }

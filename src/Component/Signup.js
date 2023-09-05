@@ -1,7 +1,9 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SignupForm from "./SignupForm.js";
 import "../css/signup.css";
+
+import Container from "./Container.js";
+import SignupForm from "./SignupForm.js";
 
 const Signup = (props) => {
   const navigate = useNavigate();
@@ -14,8 +16,10 @@ const Signup = (props) => {
 
   return (
     <div className="signup">
-      <h1 className="title">Signup</h1>
-      <SignupForm />
+      <Container>
+        <h1 className="title">Signup</h1>
+        <SignupForm />
+      </Container>
     </div>
   )
 }

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import "../css/addCategory.css";
 
+import Container from "./Container.js";
 import AddCategoryForm from "./AddCategoryForm.js";
 
 const AddCategory = (props) => {
@@ -16,9 +17,11 @@ const AddCategory = (props) => {
 
   return (
     <div className="add-category">
-      <Link to="/new"><i className="fa-solid fa-chevron-left back-btn"></i></Link>
-      <h1 className="title">Add new category</h1>
-      <AddCategoryForm />
+      <Container>
+        <Link to="/new"><i className="fa-solid fa-chevron-left back-btn"></i></Link>
+        <h1 className="title">Add new category</h1>
+        <AddCategoryForm />
+      </Container>
     </div>
   )
 }

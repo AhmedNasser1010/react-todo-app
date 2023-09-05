@@ -4,6 +4,8 @@ import LoginForm from "./LoginForm.js";
 
 import "../css/login.css";
 
+import Container from "./Container.js";
+
 const Login = (props) => {
   const navigate = useNavigate();
 
@@ -15,8 +17,10 @@ const Login = (props) => {
 
   return (
     <div className="login">
-      <h1 className="title">Login</h1>
-      <LoginForm />
+      <Container>
+        <h1 className="title">Login</h1>
+        <LoginForm />
+      </Container>
     </div>
   )
 }

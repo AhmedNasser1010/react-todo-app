@@ -4,8 +4,7 @@
 }
 
 body {
-	font-family: 'Roboto', sans-serif;
-	background-color: black;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .app {
@@ -18,21 +17,36 @@ body {
 	transition: 1s;
 }
 
+input.submit {
+	font-family: 'Oswald', sans-serif !important;
+	font-weight: 500 !important;
+	letter-spacing: 1px !important;
+}
+
+.title, h1, h2, h3 {
+	letter-spacing: 1px;
+}
+
 /* Large monitors */
-@media screen and (min-width: 600px) {
+/*@media screen and (min-width: 600px) {
 	.app {
 		width: 425px;
 		height: 100%;
 		margin: auto auto;
 	}
-}
+}*/
 
 /* Small screens */
-@media only screen and (max-width: 600px) {
+/*@media only screen and (max-width: 600px) {
 	.app {
 		max-width: 100%;
     display: flex;
     flex-direction: column;
     margin: 0px 30px;
 	}
+}*/
+
+.app {
+	width: 100%;
+	margin: 0 auto;
 }

@@ -134,7 +134,7 @@ const SignupForm = (props) => {
     			<span className="sex female" data-value="female" onClick={handleSex}>Female</span>
     		</div>
     	</label>
-    	<input className="submit" type="submit" value="Signup" />
+    	<input className="submit" type="submit" value="SIGNUP" />
       <span className="or-signup">You already have account <Link to="/login">Login</Link></span>
     	<div className="or">
     		<span className="title">Or Signup With</span>

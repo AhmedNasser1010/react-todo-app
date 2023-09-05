@@ -116,7 +116,7 @@ div.tasks .tasks .task-container.checked .task span.task-title {
 
 div.tasks .tasks .task-container .task-rem-btn {
 	position: absolute;
-	right: 45px;
+	right: 60px;
 	bottom: 5px;
 	color: #00000078;
 	transition: 0.3s;
@@ -125,4 +125,8 @@ div.tasks .tasks .task-container .task-rem-btn {
 
 div.tasks .tasks .task-container .task-rem-btn:hover {
 	color: red;
+}
+
+.tasks .task-progress-bar {
+	display: none;
 }

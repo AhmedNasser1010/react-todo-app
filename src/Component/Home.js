@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import { addCurrentUser } from "../rtk/slices/currentUserSlice.js";
 
+import Container from "./Container.js";
 import Avatar from "./Avatar.js";
 import Greeting from "./Greeting.js";
 import ViewMod from "./ViewMod.js";
@@ -82,16 +83,18 @@ const Home = (props) => {
 
   return (
     <div className="home">
-      <Link to="/settings" className="gear"><i className="fa-solid fa-gear"></i></Link>
-      <Avatar img={user.url} />
-      <div>
-        <Greeting name={user.fName} tasksCount={getCountOfTasks()} isSingle={handleIsSingle} />
-      </div>
-      <div className="categories single">
-        {
-          isSingle ? <HomeThemeSingle user={user} /> : <HomeThemeMulti user={user} />
-        }
-      </div>
+      <Container>
+        <Link to="/settings" className="gear"><i className="fa-solid fa-gear"></i></Link>
+        <Avatar img={user.url} />
+        <div>
+          <Greeting name={user.fName} tasksCount={getCountOfTasks()} isSingle={handleIsSingle} />
+        </div>
+        <div className="categories single">
+          {
+            isSingle ? <HomeThemeSingle user={user} /> : <HomeThemeMulti user={user} />
+          }
+        </div>
+      </Container>
     </div>
   );
 }

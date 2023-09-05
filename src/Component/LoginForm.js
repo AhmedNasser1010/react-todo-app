@@ -76,7 +76,7 @@ const LoginForm = (props) => {
         <span className="custom-checkbox"></span>
         Remember me
       </label>
-      <input className="submit" type="submit" value="Signup" />
+      <input className="submit" type="submit" value="LOGIN" />
       <span className="or-signup">You dont have account <Link to="/signup">Signup</Link></span>
       <div className="or">
         <span className="title">Or Login With</span>

@@ -2,6 +2,9 @@ div.home {
 	position: relative;
 	min-height: 100vh;
 	background-color: white;
+}
+
+div.home > div {
 	padding: 80px 20px 0;
 }
 
@@ -18,7 +21,11 @@ div.home {
 	position: absolute;
 	top: 20px;
 	left: 20px;
-	box-shadow: 0px 0px 6px 3px #cfcfcf;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.home div .greeting h1 {
+	color: #292929;
 }
 
 .home div .greeting span {
@@ -60,11 +67,18 @@ div.home {
 .home .categories.multi .theme-multi .add-new-task {
 	width: calc((100% - 20px) / 2);
 	height: 192.5px;
-	box-shadow: 0px 0px 10px 0px #7e7e7e;
 	border-radius: 5px;
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
+}
+
+.home .categories.multi .theme-multi .category-card {
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+}
+
+.home .categories.multi .theme-multi .add-new-task {
+	box-shadow: #fe521e82 0px 0px 60px 0px !important;
 }
 
 .home .categories.multi .theme-multi .add-new-task {
@@ -102,7 +116,7 @@ div.home {
 	align-items: center;
 	justify-content: center;
 	border-radius: 50%;
-	box-shadow: 0px 0px 10px 0px #cfcfcf;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 	position: absolute;
 	top: 40%;
 	left: 50%;
@@ -122,11 +136,12 @@ div.home {
 
 .home .categories.multi .theme-multi .category-card .title {
 	font-size: 20px;
+	color: #292929;
 }
 
 .home .categories.multi .theme-multi .category-card .text .tasks-counter {
 	font-size: 15px;
-	color: #ffffffb8;
+	color: gray;
 }
 
 .home .categories .zero-tasks {
@@ -145,12 +160,14 @@ div.home {
 .home .categories.single .theme-single {
 	margin-top: 50px;
 	color: white;
+	padding-bottom: 100px !important;
 }
 
 .home .categories.single .theme-single .swiper-wrapper .swiper-slide .category-card {
 	border-radius: 5px;
-	width: calc(75% - 60px);
-	margin: 0 auto;
+/*	width: calc(75% - 60px);*/
+/*	margin: 0 auto;*/
+	margin: 0 40px;
 	padding: 30px 30px 40px;
 	position: relative;
 }
@@ -183,10 +200,11 @@ div.home {
 .home .categories.single .theme-single .swiper-wrapper .swiper-slide .category-card .text h3.title {
 	font-weight: unset;
 	font-size: 30px;
+	color: white !important;
 }
 
 .home .categories.single .theme-single .swiper-wrapper .swiper-slide .category-card .text span.tasks-counter {
-	color: #ffffff1a;
+	color: #ffffffc2 !important;
 	font-size: 15px;
 }
 
@@ -291,7 +309,7 @@ div.home {
 
 .swiper-pagination {
 	position: absolute;
-	bottom: 10px;
+	bottom: 50px;
 	left: 50%;
 	transform: translateX(-50%);
 	width: 170px;
@@ -317,7 +335,7 @@ div.home {
   bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(425px - 40px);
+  width: 425px;
   background-color: #fe521e;
   color: white;
   font-weight: bold;
@@ -325,4 +343,17 @@ div.home {
   border-radius: 5px;
   padding: 10px 0;
   cursor: pointer;
+  box-shadow: #fe521e54 0px 10px 30px 0px;
+}
+
+.waves-parent {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: block;
+	width: 100%;
+}
+
+.categories.single .waves-parent {
+	display: none;
 }
