@@ -45,6 +45,12 @@ div.add-category {
 	box-shadow: #ffffff3d 0px 10px 30px 0px;
 }
 
+@media only screen and (max-width: 600px) {
+	.add-category form .submit {
+		width: 360px;
+	}
+}
+
 .add-category form .color-list h3 {
 	margin: 50px 0 10px;
 }

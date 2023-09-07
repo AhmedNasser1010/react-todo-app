@@ -1,7 +1,7 @@
 div.tasks {
 	background-color: #0064ff;
 	min-height: 100vh;
-	padding: 0 20px;
+	padding: 0 0px 0 20px;
 }
 
 div.tasks .back-btn {

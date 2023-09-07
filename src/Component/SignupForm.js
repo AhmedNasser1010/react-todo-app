@@ -139,8 +139,8 @@ const SignupForm = (props) => {
     	<div className="or">
     		<span className="title">Or Signup With</span>
         <div>
-          <a href="#" className="icon google">G</a>
-          <a href="#" className="icon facebook">F</a>
+          <a href="#" className="icon google"><i class="fa-brands fa-google"></i></a>
+          <a href="#" className="icon facebook"><i class="fa-brands fa-facebook-f"></i></a>
         </div>
     	</div>
     </form>

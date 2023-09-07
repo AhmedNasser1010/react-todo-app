@@ -103,3 +103,9 @@
 	cursor: pointer;
 	box-shadow: #ffffff3d 0px 10px 30px 0px;
 }
+
+@media only screen and (max-width: 600px) {
+	.new-task .new-task-input .submit {
+		width: 360px;
+	}
+}
