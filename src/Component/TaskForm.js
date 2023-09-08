@@ -10,6 +10,18 @@ const TaskForm = (props) => {
 
   function handleChange(e) {
     setNewTask({...newTask, title: e.target.value});
+
+    if (localStorage.currentUser) {
+
+      const toParse = JSON.parse(localStorage.currentUser);
+      setNewTask(prevState => ({...prevState, id: toParse.data.tasks.length}));
+
+    } else if (sessionStorage.currentUser) {
+
+      const toParse = JSON.parse(sessionStorage.currentUser);
+      setNewTask(prevState => ({...prevState, id: toParse.data.tasks.length}));
+
+    }
   }
 
   function handleCategoryChange(e) {
