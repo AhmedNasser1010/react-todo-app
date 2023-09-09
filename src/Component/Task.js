@@ -41,8 +41,8 @@ const Task = ({ values, index, deleteVisibility }) => {
 
   return (
   	<div className="task-container">
-   		<label htmlFor={index} className="task">
-   			<input id={index} type="checkbox" className="checkbox" checked={values.isDone} onChange={handleClick} />
+   		<label htmlFor={values.id} className="task">
+   			<input id={values.id} type="checkbox" className="checkbox" checked={values.isDone} onChange={handleClick} />
    			<span className="custom-checkbox"></span>
    			<span className="task-title">
    				{values.title}

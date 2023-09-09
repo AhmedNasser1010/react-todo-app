@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../css/signup.css";
 
-import Container from "./Container.js";
 import SignupForm from "./SignupForm.js";
 
 const Signup = (props) => {
@@ -16,10 +15,10 @@ const Signup = (props) => {
 
   return (
     <div className="signup">
-      <Container>
+      <div className="container">
         <h1 className="title">Signup</h1>
         <SignupForm />
-      </Container>
+      </div>
     </div>
   )
 }

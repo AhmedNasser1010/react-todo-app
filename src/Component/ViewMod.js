@@ -12,12 +12,10 @@ const ViewMod = ({ isSingle }) => {
     element.classList.add("selected");
 
     if (value === "single") {
-      console.log("multi to single");
       category.classList.remove("multi");
       category.classList.add(value);
       isSingle(true);
     } else {
-      console.log("single to multi");
       category.classList.remove("single");
       category.classList.add(value);
       isSingle(false);

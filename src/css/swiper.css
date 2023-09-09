@@ -1,0 +1,200 @@
+/* .slick-slider .slick-list .slick-track .slick-slide */
+
+.slick-slider {
+	margin-top: 50px;
+	color: white;
+	position: relative;
+}
+
+.slick-slider .slick-arrow {
+	position: absolute;
+	top: 50%;
+	z-index: 1;
+}
+
+.slick-slider .slick-next {
+	right: 0;
+}
+
+.slick-slider .slick-prev {
+	left: 0;
+}
+
+.slick-slider .slick-next::before,
+.slick-slider .slick-prev::before {
+	color: #bbbbbb;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card {
+	border-radius: 5px;
+/*	width: calc(75% - 60px);*/
+/*	margin: 0 auto;*/
+	margin: 0 40px;
+	padding: 30px 30px 40px;
+	position: relative;
+	margin-bottom: 60px;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card i.main-icon {
+	background-color: white;
+	width: 35px;
+	height: 35px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	margin-bottom: 15px;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card i.back-icon {
+  visibility: visible !important;
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  font-size: 100px;
+  color: #ffffff0f;
+  transform: translateY(-50%);
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .text {
+	margin-bottom: 20px;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .text h3.title {
+	font-weight: unset;
+	font-size: 30px;
+	color: white !important;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .text span.tasks-counter {
+	color: #ffffffc2 !important;
+	font-size: 15px;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks .task-container .task {
+	padding: 5px 0;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks .task-container .task {
+	display: flex;
+	cursor: pointer;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks .task-container .task span {
+	text-align: center;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks .task-container .task span.task-title {
+	width: 100%;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks .task-container.checked {
+	position: relative;
+	opacity: 0.5;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks .task-container.checked::before {
+	content: "";
+	width: 80%;
+	height: 1px;
+	background-color: white;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks {
+	display: flex;
+  flex-direction: column;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks .percent-bar {
+	position: relative;
+	margin-top: 30px;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks .percent-bar .bar {
+	width: 100%;
+	height: 5px;
+	background-color: #ffffff8a;
+	border-radius: 10px;
+	position: absolute;
+	left: 0;
+	bottom: -7px;
+	overflow: hidden;
+	margin-top: 5px;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks .percent-bar .bar .prog {
+	width: 30%;
+	height: 5px;
+	background-color: white;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	border-radius: 10px;
+	transition: 1s;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks .task-container .task .checkbox {
+	display: none;
+}
+
+.slick-slider .slick-list .slick-track .slick-slidee .category-card .category-tasks .task-container .task .custom-checkbox {
+	width: 10px;
+	height: 10px;
+	border: 2px solid #ffffff8a;
+	border-radius: 4px;
+	position: relative;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks .task-container .task .custom-checkbox::before {
+	opacity: 0;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks .task-container.checked .task .custom-checkbox::before {
+	content: "\f00c";
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 9px;
+	opacity: 1;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks .task-container.checked .task .custom-checkbox {
+	opacity: 0;
+}
+
+.slick-slider .slick-dots {
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 170px;
+	height: 5px;
+	background-color: #d0d0d08a;
+	border-radius: 10px;
+	display: flex !important;
+	overflow: hidden;
+}
+
+.slick-slider .slick-dots li {
+	width: 100%;
+	height: 5px;
+	border-radius: 10px;
+	margin: 0;
+}
+
+.slick-slider .slick-dots li.slick-active {
+	background-color: #fe521e;
+}
+
+@media only screen and (max-width: 600px) {
+	.slick-slider .slick-arrow {
+		display: none !important;
+	}
+}

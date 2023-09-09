@@ -17,7 +17,6 @@ const NewTaskCategories = (props) => {
 
 		categories.forEach(category => category.classList.remove(`selected`));
 
-		console.log(catSpliced.split(" ").join(""));
 		current.classList.add(`selected`);
 	}
 

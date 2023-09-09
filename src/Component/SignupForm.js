@@ -124,8 +124,8 @@ const SignupForm = (props) => {
     	<label htmlFor="password">
     		<input placeholder="Password" className="password" id="password" value={localUser.password} type="password" name="password" onChange={handleChange} />
     	</label>
-    	<label htmlFor="url">
-    		<input placeholder="Avatar URL link" className="avatar-url" id="url" value={localUser.url} type="text" name="url" onChange={handleChange} />
+    	<label htmlFor="img">
+    		<input placeholder="Avatar URL link" className="avatar-img" id="img" value={localUser.img} type="file" accept="image/*" name="img" onChange={handleChange} />
     	</label>
     	<label className="ageSex">
     		<div>
@@ -139,8 +139,8 @@ const SignupForm = (props) => {
     	<div className="or">
     		<span className="title">Or Signup With</span>
         <div>
-          <a href="#" className="icon google"><i class="fa-brands fa-google"></i></a>
-          <a href="#" className="icon facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" className="icon google"><i className="fa-brands fa-google"></i></a>
+          <a href="#" className="icon facebook"><i className="fa-brands fa-facebook-f"></i></a>
         </div>
     	</div>
     </form>

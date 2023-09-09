@@ -27,6 +27,14 @@ input.submit {
 	letter-spacing: 1px;
 }
 
+.container {
+	max-width: 425px;
+  min-height: 100vh;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
 /* Large monitors */
 /*@media screen and (min-width: 600px) {
 	.app {

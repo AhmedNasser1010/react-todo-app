@@ -37,8 +37,11 @@ const LoginForm = (props) => {
     let isValid = true;
     const emailInput = document.querySelector("input.email").parentElement;
     const passwordInput = document.querySelector("input.password").parentElement;
+    let localStorageUsers;
 
-    const localStorageUsers = JSON.parse(localStorage.users);
+    if (localStorage.users) {
+      localStorageUsers = JSON.parse(localStorage.users);
+    } else {isValid = false; emailInput.classList.add("notValid"); return}
 
     localStorageUsers.map((user) => {
 
@@ -81,8 +84,8 @@ const LoginForm = (props) => {
       <div className="or">
         <span className="title">Or Login With</span>
         <div>
-          <a href="#" className="icon google"><i class="fa-brands fa-google"></i></a>
-          <a href="#" className="icon facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" className="icon google"><i className="fa-brands fa-google"></i></a>
+          <a href="#" className="icon facebook"><i className="fa-brands fa-facebook-f"></i></a>
         </div>
       </div>
     </form>

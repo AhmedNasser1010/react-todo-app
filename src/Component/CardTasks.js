@@ -37,6 +37,11 @@ const CardTasks = ({ user, category }) => {
     return 0;
   }
 
+  useEffect(() => {
+    // console.log(user);
+    // console.log(category);
+  }, [])
+
   return (
     <div className="category-tasks">
     	{

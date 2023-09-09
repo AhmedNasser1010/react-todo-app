@@ -3,7 +3,7 @@ const userDataTemplate = {
   lName: "",
   email: "",
   password: "",
-  url: "",
+  img: "",
   age: "",
   sex: "",
   data: {
