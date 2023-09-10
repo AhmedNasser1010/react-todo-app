@@ -43,6 +43,7 @@ export const currentUserSlice = createSlice({
       const cloneState = deepStateClone(state);
       const index = cloneState[0].data.tasks.findIndex(task => task.id === action.payload.id);
 
+
       cloneState[0].data.tasks[index].isDone = !cloneState[0].data.tasks[index].isDone;
 
       let getCurrentUser;

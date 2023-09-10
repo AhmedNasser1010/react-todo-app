@@ -16,6 +16,25 @@ const SignupForm = (props) => {
     const name = e.target.name;
 
     e.target.value === "on" ? value = e.target.checked : value = e.target.value;
+	
+	if (e.target.classList.contains("avatar-img")) {
+		const fileSizeByte = 1 * 1024 * 1024;
+		const image = e.target.files[0];
+		const reader = new FileReader();
+		
+		if (image) {
+			reader.readAsDataURL(image);
+		}
+		
+		reader.onload = () => {
+			if (image.size > fileSizeByte) {
+				setLocalUser({...localUser, img: ""});
+				alert("File size exceeds the maximum limit of 1MB.");
+			} else {
+			setLocalUser({...localUser, img: reader.result});
+			}
+		}
+	}
 
     setLocalUser({...localUser, [name]: value});
   }
@@ -42,6 +61,7 @@ const SignupForm = (props) => {
     const lNameInput = document.querySelector("input.lName").parentElement;
     const emailInput = document.querySelector("input.email").parentElement;
     const passwordInput = document.querySelector("input.password").parentElement;
+	const imgInput = document.querySelector("input.avatar-img");
     const ageInputAndOthers = document.querySelector("input.age").parentElement;
 
     // fName
@@ -104,10 +124,13 @@ const SignupForm = (props) => {
     if (localUser.sex === "") {isValid = false; ageInputAndOthers.classList.add("notValid-other")}
 
     if(isValid) {
-
       dispatch(addUser(localUser));
       navigate("/login");
     }
+  }
+  
+  function ImageUploader() {
+	
   }
 
   return (
@@ -125,7 +148,7 @@ const SignupForm = (props) => {
     		<input placeholder="Password" className="password" id="password" value={localUser.password} type="password" name="password" onChange={handleChange} />
     	</label>
     	<label htmlFor="img">
-    		<input placeholder="Avatar URL link" className="avatar-img" id="img" value={localUser.img} type="file" accept="image/*" name="img" onChange={handleChange} />
+    		<input placeholder="Avatar URL link" className="avatar-img" id="img" type="file" accept="image/*" name="img" onChange={handleChange} />
     	</label>
     	<label className="ageSex">
     		<div>

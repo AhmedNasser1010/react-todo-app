@@ -1,5 +1,6 @@
 div.add-category {
-	background-color: #fe521e;
+	/* background-color: #fe521e; */
+	background: linear-gradient(150deg, rgb(254 82 30 / 80%) 0%, rgba(254,82,30,1) 75%);
 	min-height: 100vh;
 	padding: 0 20px 80px;
 	color: white;

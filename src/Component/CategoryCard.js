@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import CardTasks from "./CardTasks.js";
 
@@ -96,7 +96,7 @@ const CategoryCard = ({ category, bg }) => {
   }
 
   return (
-    <div className="category-card" style={{backgroundColor: bg, boxShadow: `rgba(${hexToRgb(category.HEX)}, 36%) 0px 60px 40px -35px`}}>
+    <div className="category-card" style={{background: `linear-gradient(150deg, rgba(${hexToRgb(bg)},0.8) 0%, rgba(${hexToRgb(bg)},1) 40%)`, boxShadow: `rgba(${hexToRgb(category.HEX)}, 36%) 0px 60px 40px -35px`}}>
       <i className={`${category.icon.style} ${category.icon.name} main-icon`} style={{color: category.HEX}}></i>
       <i className={`${category.icon.style} ${category.icon.name} back-icon`} style={{visibility: "hidden"}}></i>
     	<div className="text" onClick={() => handleClick(category.title)}>

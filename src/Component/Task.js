@@ -46,11 +46,11 @@ const Task = ({ values, index, deleteVisibility }) => {
    			<span className="custom-checkbox"></span>
    			<span className="task-title">
    				{values.title}
-   				{
-   					deleteVisibility && <i className="fa-regular fa-trash-can task-rem-btn" onClick={() => handleTaskRem(values)}></i>
-   				}
    			</span>
    		</label>
+			{
+				deleteVisibility && <i className="fa-regular fa-trash-can task-rem-btn" onClick={() => handleTaskRem(values)}></i>
+   		}
     </div>
   )
 }

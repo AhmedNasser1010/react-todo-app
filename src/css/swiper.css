@@ -107,14 +107,32 @@
 .slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks {
 	display: flex;
   flex-direction: column;
+	overflow-y: auto;
+  max-height: 160px;
 }
 
-.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks .percent-bar {
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks::-webkit-scrollbar  {
+	width: 5px;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks::-moz-scrollbar {
+	width: 5px;
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks::-webkit-scrollbar-thumb {
+	background: rgb(250 250 250 / 16%);
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks::-moz-scrollbar-track {
+	background: rgb(250 250 250 / 16%);
+}
+
+.slick-slider .slick-list .slick-track .slick-slide .category-card .percent-bar {
 	position: relative;
 	margin-top: 30px;
 }
 
-.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks .percent-bar .bar {
+.slick-slider .slick-list .slick-track .slick-slide .category-card .percent-bar .bar {
 	width: 100%;
 	height: 5px;
 	background-color: #ffffff8a;
@@ -126,7 +144,7 @@
 	margin-top: 5px;
 }
 
-.slick-slider .slick-list .slick-track .slick-slide .category-card .category-tasks .percent-bar .bar .prog {
+.slick-slider .slick-list .slick-track .slick-slide .category-card .percent-bar .bar .prog {
 	width: 30%;
 	height: 5px;
 	background-color: white;

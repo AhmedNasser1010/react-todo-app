@@ -1,5 +1,6 @@
 .signup {
-	background-color: #fe521e;
+	/* background-color: #fe521e; */
+	background: linear-gradient(150deg, rgb(254 82 30 / 80%) 0%, rgba(254,82,30,1) 75%);
 	min-height: 100vh;
 	color: white;
 }
@@ -70,6 +71,11 @@
 
 .signup form label input::placeholder {
 	color: white;
+}
+
+.signup form label input.avatar-img {
+	all: unset;
+	height: 25px;
 }
 
 .signup form label.ageSex {

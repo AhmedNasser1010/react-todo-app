@@ -43,17 +43,19 @@ const CardTasks = ({ user, category }) => {
   }, [])
 
   return (
-    <div className="category-tasks">
-    	{
-    		tasks.map((task, index) => (<Task key={index} className="card-task" values={task} index={index} deleteVisibility={false} />))
-    	}
-    	<div className="percent-bar">
-    		<span className="percentage">{getPercent()}%</span>
-    		<span className="bar">
-          <span className="prog" style={{width: `${getPercent()}%`}}></span>  
-        </span>
-    	</div>
-    </div>
+		<>
+			<div className="category-tasks">
+				{
+					tasks.map((task, index) => (<Task key={index} className="card-task" values={task} index={index} deleteVisibility={false} />))
+				}
+			</div>
+			<div className="percent-bar">
+				<span className="percentage">{getPercent().toFixed()}%</span>
+				<span className="bar">
+					<span className="prog" style={{width: `${getPercent()}%`}}></span>  
+				</span>
+			</div>
+		</>
   )
 }
 

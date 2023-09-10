@@ -1,5 +1,6 @@
 div.tasks {
-	background-color: #0064ff;
+	/* background-color: #0064ff; */
+	background: linear-gradient(150deg, rgba(0,100,255,0.8) 0%, rgba(0,100,255,1) 75%);
 	min-height: 100vh;
 	padding: 0 0px 0 20px;
 }
@@ -47,34 +48,35 @@ div.tasks .empty a {
 	color: #fe521e;
 }
 
-div.tasks .tasks {
+div.tasks .tasks-parent {
 	display: flex;
 	flex-direction: column;
 	margin-top: 80px;
 	position: relative;
+	background-color: transparent;
 }
 
-div.tasks .tasks .task-container  {
+div.tasks .tasks-parent .task-container  {
 	margin-bottom: 70px;
 	display: flex;
 	align-items: center;
+	position: relative;
 }
 
-div.tasks .tasks .task-container .task .checkbox {
+div.tasks .tasks-parent .task-container .task .checkbox {
 	display: none;
 }
 
-div.tasks .tasks .task-container .task .custom-checkbox {
+div.tasks .tasks-parent .task-container .task .custom-checkbox {
 	width: 15px;
   height: 15px;
   border: 2px solid white;
   border-radius: 5px;
-  position: relative;
   display: inline-block;
   overflow: hidden;
 }
 
-div.tasks .tasks .task-container .task .custom-checkbox::before {
+div.tasks .tasks-parent .task-container .task .custom-checkbox::before {
 	content: "\f00c";
 	font-family: "Font Awesome 6 Free";
 	font-weight: 900;
@@ -88,16 +90,15 @@ div.tasks .tasks .task-container .task .custom-checkbox::before {
 	color: white;
 }
 
-div.tasks .tasks .task-container.checked .task .custom-checkbox {
-	background-color: #0064ff;
-	border-color: #0064ff;
+div.tasks .tasks-parent .task-container.checked .task .custom-checkbox {
+	border-color: transparent;
 }
 
-div.tasks .tasks .task-container.checked .task .custom-checkbox::before {
+div.tasks .tasks-parent .task-container.checked .task .custom-checkbox::before {
 	opacity: 1;
 }
 
-div.tasks .tasks .task-container .task span.task-title {
+div.tasks .tasks-parent .task-container .task span.task-title {
 	position: absolute;
 	left: 55px;
 	padding: 10px 50px 10px 10px;
@@ -109,21 +110,21 @@ div.tasks .tasks .task-container .task span.task-title {
 	color: #242424;
 }
 
-div.tasks .tasks .task-container.checked .task span.task-title {
+div.tasks .tasks-parent .task-container.checked .task span.task-title {
 	background-color: #ffffff63;
 	color: white;
 }
 
-div.tasks .tasks .task-container .task-rem-btn {
+div.tasks .tasks-parent .task-container .task-rem-btn {
 	position: absolute;
-	right: 60px;
-	bottom: 5px;
+	right: 5px;
+  bottom: -20px;
 	color: #00000078;
 	transition: 0.3s;
 	cursor: pointer;
 }
 
-div.tasks .tasks .task-container .task-rem-btn:hover {
+div.tasks .tasks-parent .task-container .task-rem-btn:hover {
 	color: red;
 }
 

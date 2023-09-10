@@ -46,7 +46,7 @@ const Tasks = (props) => {
       <div className="container">
         <Link to="/"><i className="fa-solid fa-chevron-left back-btn"></i></Link>
         <TaskInfo />
-        <div className="tasks">
+        <div className="tasks-parent">
           {
             tasks.map((task, index) => (<Task key={index} className="task" values={task} index={index} deleteVisibility={true} />))
           }

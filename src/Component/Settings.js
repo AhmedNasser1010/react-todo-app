@@ -6,8 +6,6 @@ import { useNavigate, Link } from "react-router-dom";
 
 import "../css//settings.css";
 
-import Container from "./Container.js";
-
 const Settings = (props) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -30,14 +28,14 @@ const Settings = (props) => {
 
   return (
     <div className="settings">
-      <Container>
+      <div className="container">
         <Link to="/"><i className="back-btn fa-solid fa-chevron-left"></i></Link>
         <div className="btns">
           <span className="btn logout" onClick={handleLogout}>Logout</span>
           <span className="btn rem-current" onClick={handleRemCurrent}>Remove Current Account</span>
           <span className="btn rem-all" onClick={handleRemAll}>Remove All Users Data</span>
         </div>
-      </Container>
+      </div>
     </div>
   )
 }
