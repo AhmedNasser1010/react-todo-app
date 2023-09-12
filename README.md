@@ -98,21 +98,26 @@ The app is deployed to https://todo-ahmed.vercel.app
 **Screenshot from my project**
 
 * Login / Signup
+
 ![signup](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694484172/add-task_h0cifx.png)
 ![login](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694484172/login_mfuatw.png)
 
 * Home page with the two modes
+
 ![home page theme one](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694484172/home_stf3pe.png)
 ![home page theme two](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694484172/homeTwo_xvynzn.png)
 
 * Add Categoty / Add Task
+
 ![add task](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694484172/signup_fwfrsj.png)
 ![add categoty](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694484172/add-category_admd29.png)
 
 * Tasks
+
 ![tasks](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694484172/tasks_diugep.png)
 
 * Settings
+
 ![settings](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694484172/settings_vrszjf.png)
 
 ## License
