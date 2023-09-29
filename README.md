@@ -1,5 +1,20 @@
+
 # React Todo App
 
+![website logo](https://i.imgur.com/mM0DIdCb.png)
+
+## Table of Contents
+- [Description](#description)
+- [Technologies](#technologies)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Deployment](#deployment)
+- [Screenshot](#screenshot)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Description
 This is a comprehensive React app that allows users to create and manage their to-do lists. The app is responsive and can be used on all devices.
 
 ## Technologies
@@ -90,36 +105,47 @@ The app is deployed to https://todo-ahmed.vercel.app
 
 ## Screenshot
 
-**From one surface image to real website**
+**From one unknown surface image to real website**
 
-**The original image i find it in google**
+**The original image, i find it in google**
 ![Original image](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694482196/ui_wr4gyy.png)
 
 **Screenshot from my project**
 
 * Login / Signup
 
-![signup](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694484172/add-task_h0cifx.png)
-![login](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694484172/login_mfuatw.png)
+![signup](https://i.imgur.com/eDHwyWt.png)
+![login](https://i.imgur.com/dABPcgC.png)
 
 * Home page with the two modes
 
-![home page theme one](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694484172/home_stf3pe.png)
-![home page theme two](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694484172/homeTwo_xvynzn.png)
+![home page theme one](https://i.imgur.com/S6U9rWA.png)
+![home page theme two](https://i.imgur.com/LTWmH5H.png)
 
-* Add Categoty / Add Task
+* Add Category / Add Task
 
-![add task](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694484172/signup_fwfrsj.png)
-![add categoty](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694484172/add-category_admd29.png)
+![add task](https://i.imgur.com/NYUmUra.png)
+![add category](https://i.imgur.com/t2xlP8a.png)
 
 * Tasks
 
-![tasks](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694484172/tasks_diugep.png)
+![tasks](https://i.imgur.com/LzGRI3M.png)
 
 * Settings
 
-![settings](https://res.cloudinary.com/dxmxoz09h/image/upload/v1694484172/settings_vrszjf.png)
+![settings](https://i.imgur.com/pPFB7jv.png)
+
+## Contributing
+We appreciate contributions to improve our project. To contribute, follow these steps:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b my-feature`
+3. Make your changes and commit them: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-feature`
+5. Open a pull request.
+
+Please adhere to the coding conventions and standards followed in the project.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
